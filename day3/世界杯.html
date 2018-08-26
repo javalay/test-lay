@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a{
+            /* 去除a链接的下划线 */
+            text-decoration: none;
+        }
+        ul{
+         /* 去除前面的原点 */
+        list-style: none;
+        padding: 0 10px;
+        }
+    .first-1{
+        /* 给div一个限定的宽 让margin上下等于零左右自适应  */
+        width: 650px;
+        margin: 0 auto;
+    }
+    .first-1-1{
+        /* 设置一个背景 字体加粗  */
+        background-image: url('images/tab_hover2.png');
+        font-weight: bold;
+        color: white;
+    } 
+    span{
+        /* 清除浮动  */
+        display: block;
+        font-size: 18px;
+        padding: 18px 13px;
+    }
+    span:hover{
+        background-image: url('images/tab_hover2.png');
+        color: white;
+        font-weight: bold;
+        /* 将鼠标 变为小手 */
+        cursor: pointer;
+    }
+    .first-2{
+        border: 1px solid #ccc;
+        /* 添加上边框2px  */
+        border-top: 2px solid #d00;
+        /* 清除浮动 */
+        overflow: hidden;
+        padding: 0;
+    }
+    .first-2 li{
+        /* 清除浮动 */
+        overflow: hidden;
+        /* 左浮动 */
+        float: left;
+        /* 设置margin去上面2px 然后鼠标经过是 看起来没有边线的样式 */
+        margin-top: -2px;
+        /* 块内元素 转换为行内快元素 */
+        display: inline-block;
+    }
+    .dier-1{
+        padding: 0;
+    }
+    /* 设置标题的样式 */
+    .dier-1 h3{
+        margin: 0;
+        padding: 17px 0 10px 0;
+    }
+    .dier-1-1{
+        color: #d00;
+        font-size: 20px;
+        /* 字体的加粗 */
+        font-weight: bold;
+        /* 字体的间距 */
+        letter-spacing: .5px;        
+    }
+    .disan{
+        margin-top: 10px;
+    }
+    .disan-1{
+        /* position: 0; */
+        float: left;
+    }
+    .disan-2{
+        /* 去掉原点 */
+        margin: 0;
+        float: left;
+    }
+    .disan-2 a{
+        letter-spacing: .5px;
+        color: #333;
+    }
+    .disan-2 a:hover{
+        color: #d00;
+    }
+    .disan-2 li{
+        /*  限定了padding */
+        padding: 7px;
+        /* 这里指定图片的地址 */
+        background-image: url('images/prefix-makeupurl.png');
+        /* 显示自身的大小 */
+        background-repeat: no-repeat;
+        /* 利用 X　Ｙ　限定图片所在的位置 */
+        background-position: 0 16px;
+        /* 内边框　左边距　１２ｐｘ */
+        padding-left: 12px;
+    }
+    </style>
+</head>
+<body>
+    <div class="first-1">
+        <ul class="first-2">
+            <li class="first-1-1"><span>热门</span></li>
+            <li><span>法国</span></li>
+            <li><span>C罗转会</span></li>
+            <li><span>克罗地亚</span></li>
+            <li><span>巴西</span></li>
+            <li><span>英格兰</span></li>
+            <li><span>比利时</span></li>
+            <li><span>视频</span></li>
+        </ul>
+        <div class="dier-1">
+            <h3>
+                <a href="#" class="dier-1-1">世界杯-法国4-2克罗地亚时隔20年再夺冠</a>
+                <a href="#" class="dier-1-1">复盘:全靠怂!忍是王道</a>
+            </h3>
+            <div class="disan">
+                <div class="disan-1">
+                   <img src="images/pzFz-hfkffam5170339.jpg">
+                </div>
+                <ul class="disan-2">
+                   <li>
+                      <a href="#">壮观!数十万球迷迎接法国凯旋</a>
+                      <a href="#">球迷庆祝闹事！近300人被抓</a>
+                   </li>
+                   <li>
+                      <a href="#">法国锁定下届小组赛出局？</a>
+                      <a href="#">对手diss:就会蹲坑根本不是踢球</a>
+                   </li>
+                   <li>
+                      <a href="#">法国唱坎特之歌:阻止梅西的人</a>
+                      <a href="#">神锋回应质疑:没进球也是冠军</a>
+                   </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
