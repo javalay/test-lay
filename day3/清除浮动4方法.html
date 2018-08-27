@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .diyi{
+        width: 600px;
+        background-color: red;
+        /* 这是第二种方法 在父级元素添加  overflow: hidden; */
+    }
+    .diyi-1{
+        width: 240px;
+        height: 100px;
+        background-color: blue;
+        float: left;
+    }
+    .diyi-2{
+        width: 260px;
+        height: 100px;
+        background-color: brown;
+        float: left;
+    }
+    .dier{
+        width: 600px;
+        height: 600px;
+        background-color: pink;
+    }
+    /*  这是第三种方法 
+    .clearfix:after{
+        display: block;
+        content: ".";
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+    .clearfix{*zoom:1} */
+
+ 
+    /* 这是第四种方法 添加一个类 添加下面几个特性 */
+    .clearfix:before, .clearfix:after{
+        content: " ";
+        display: table;
+    }
+    .clearfix:after{
+        clear: both;
+    }
+    .clearfix{
+        *zoom: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="diyi clearfix">
+        <div class="diyi-1"></div>
+        <div class="diyi-2"></div>
+        <!--这是第一种方法，在浮动元素下面添加标签法
+        <div style="clear:both";></div> -->
+    </div>
+    <div class="dier"></div>
+</body>
+</html>
