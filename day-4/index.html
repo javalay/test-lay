@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            /* 这是整体布局的属性  */
+            margin: 0;
+            padding: 0;
+            list-style: none;    
+        }
+        body{
+            font-size:'宋体';
+            font-size: 15px;
+            color: #3e3e3e;
+        }
+        a{
+            color: #3e3e3e;
+            /* 去掉下划线 */
+            text-decoration: none;
+        }
+        a:hover{
+            /* 鼠标移动到a上面后 字体颜色改变 真加有下划线*/
+            color: #3399b2;
+            text-decoration: underline;
+        }
+    .main{
+        width: 310px;
+        height: 330px;
+        border: 1px solid #ccc;
+        margin: 100px auto;
+        padding: 15px;
+        /* 遵循子绝父相原则  相对定位：位置偏移后 原有的位置继续占有 */
+        position: relative;
+    }
+    .new{
+        width: 60px;
+        height: 54px;
+        background: url("images/top_tu.gif");
+        /* 子绝父相  绝：原有的位置继续占有 */
+        position: absolute;
+        /* 相对于父级 左为零 上为零 */
+        left: 0;
+        top: 0;
+    }
+    .js{
+        /* 字体加粗 */
+        font-weight: bold;
+        margin-top: 10px;
+        line-height: 22px;
+    }
+    .left{
+        float: left;
+        color: #aaa;
+    }
+    .left span{
+        color: #ed5238;
+        font-size: 28px;
+    }
+    .right{
+        float: right;
+        width: 80px;
+        height: 55px;
+    }
+    .right p{
+        text-align: right;
+        font-size: 12px;
+    }
+    .right p span{
+        color: #ed5238;
+        font-weight: bold;
+        line-height: 26px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <a href="#">
+            <img src="images/adv.jpg">
+        </a>
+        <span class="new"></span>
+        <p class="js">
+            <a href="#">【12店通用】领航冰品哈根达斯：冰淇淋双球，口味任选2种，节假通用</a>
+        </p>
+        <div class="bottom">
+            <p class="left">
+                <span>￥20.8</span>原价￥38
+            </p>
+            <div class="right">
+                <a href="#">
+                    <img src="images/see.jpg">
+                </a>
+                <p>
+                    <span>32</span>
+                    人已购买
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
