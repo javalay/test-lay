@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 500px;
+        /* 里面的字体居中显示 */
+        text-align:center;
+    }
+    table{
+        width: 400px;
+        /*   border-collapse: collapse; 如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性。 */
+        border-collapse: collapse;
+    }
+th{
+    height: 40px;
+    /* 背景是这个颜色 */
+    background: #428cdb;
+        /* 里面的字体又是一种颜色 */
+    color: white;
+    font-size: 14px;
+    /* 这是字体的宽度 */
+    font-weight: normal;
+}
+td{
+    height: 50px;
+    text-align: center;
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+}
+img{
+    width: 30px;
+    height: 30px;
+}
+a{
+    color: #333;
+    /* 在a链接里面的下划线去掉 */
+    text-decoration: none;
+}
+a:hover{
+    color:  rgb(221, 0, 0);
+}
+td:nth-of-type(1){
+    font-size: 25px;
+    color:  rgb(221, 0, 0);
+}
+/* th:nth-of-type(3)  在所以th里面的第三个设置属性  */
+th:nth-of-type(3){
+    text-align: left;
+}
+td:nth-of-type(3){
+    text-align: left;
+}
+</style>
+<body>
+    <!-- 表单部分 -->
+    <table>
+        <!-- 这是表头部分 -->
+        <tr>
+            <th>排名</th>
+            <th>对标</th>
+            <th>球队</th>
+            <th>胜</th>
+            <th>负</th>
+            <th>胜差</th>
+            <th>胜率</th>
+        </tr>
+        <!-- 表身部分 -->
+        <tr>
+            <td>1</td>
+            <td>
+                <a href="#"><img src="01.png"></a> 
+            </td>
+            <td><a href="#">猛龙</a></td>
+            <td>59</td>
+            <td>23</td>
+            <td>0</td>
+            <td>72.0%</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="#"><img src="02.png"></a></td>
+            <td><a href="#">凯尔特人</a></td>
+            <td>55</td>
+            <td>27</td>
+            <td>4</td>
+            <td>67.1%</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="3"><img src="03.png"></a></td>
+            <td><a href="#">76人</a></td>
+            <td>52</td>
+            <td>30</td>
+            <td>7</td>
+            <td>63.4%</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="#"><img src="04.png"></a></td>
+            <td><a href="#">骑士</a></td>
+            <td>50</td>
+            <td>32</td>
+            <td>9</td>
+            <td>61.0%</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="#"><img src="05.png"></a></td>
+            <td><a href="#">步行者</a></td>
+            <td>44</td>
+            <td>38</td>
+            <td>11</td>
+            <td>58.5%</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="#"><img src="06.png"></a></td>
+            <td><a href="#">热火</a></td>
+            <td>44</td>
+            <td>38</td>
+            <td>15</td>
+            <td>53.7%</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="#"><img src="07.png"></a></td>
+            <td><a href="#">雄鹿</a></td>
+            <td>44</td>
+            <td>38</td>
+            <td>15</td>
+            <td>53.7%</td>
+        </tr>
+    </table>
+</body>
+</html>
