@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* 这是去掉 列表li元素前面的小点。 */
+        list-style: none;
+    }
+    body{
+        font-size: 12px;
+        color: #000;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .main{
+        width: 230px;
+        height: 240px;
+        background: url("images/bg.jpg");
+        margin: 100px auto;
+        padding: 60px 20px 0 420px;
+    }
+    .more{
+        text-align: right;
+        margin-bottom: 45px;
+    }
+    .more a{
+        color: #fff;
+    }
+    .main h3{
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .con{
+        padding-right: 10px;
+        margin-bottom: 20px;
+        /* 首行缩进两个 */
+        text-indent: 2em;
+    }
+    .main ul{
+        font-size: 14px;
+    }
+    .main ul li{
+        background: url("images/dot.jpg")no-repeat 0 center;
+        padding-left: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p class="more">
+            <a href="#">更多>></a>
+        </p>
+        <h3>
+            <a href="#">奥斯卡影后的纽约俭约豪宅</a>
+        </h3>
+        <p class="con">
+            <a href="#">奥斯卡影后的纽约俭约豪宅奥斯卡影后娜塔莉—波特曼的这间公寓，每件家具都有光滑的线条感…</a>
+        </p>
+        <ul>
+            <li><a href="#">流光溢彩 施华洛世奇系列珠宝</a></li>
+            <li><a href="#">流光溢彩 施华洛世奇系列珠宝</a></li>
+            <li><a href="#">流光溢彩 施华洛世奇系列珠宝</a></li>
+        </ul>
+    </div>
+</body>
+</html>
