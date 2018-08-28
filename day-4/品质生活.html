@@ -7,6 +7,8 @@
     <title>Document</title>
     <style>
     *{
+        /* 开始为了 布局要求，maigin padding 都为零
+        后期不会有误差 */
         margin: 0;
         padding: 0;
         /* 这是去掉 列表li元素前面的小点。 */
@@ -17,10 +19,12 @@
         color: #000;
     }
     a{
+        /* 去掉a链接下面的下划线 */
         text-decoration: none;
         color: black;
     }
     a:hover{
+        /* 当鼠标移向a链接时，会显示a链接的下划线 */
         color: #dd4073;
         text-decoration: underline;
     }
@@ -32,6 +36,7 @@
         padding: 60px 20px 0 420px;
     }
     .more{
+        /* 这是让字体向 右显示 */
         text-align: right;
         margin-bottom: 45px;
     }
@@ -39,8 +44,10 @@
         color: #fff;
     }
     .main h3{
+        /* h3 的字体居中显示 */
         text-align: center;
         font-size: 16px;
+        /* 整体距离下有20px距离 */
         margin-bottom: 20px;
     }
     .con{
@@ -53,22 +60,27 @@
         font-size: 14px;
     }
     .main ul li{
+        /* 这种方式添加背景图片  然后在微调*/
         background: url("images/dot.jpg")no-repeat 0 center;
         padding-left: 10px;
     }
     </style>
 </head>
 <body>
+    <!-- 主体部分 -->
     <div class="main">
         <p class="more">
             <a href="#">更多>></a>
         </p>
+        <!-- 右边标题部分 -->
         <h3>
             <a href="#">奥斯卡影后的纽约俭约豪宅</a>
         </h3>
+        <!-- 中间段落部分 -->
         <p class="con">
             <a href="#">奥斯卡影后的纽约俭约豪宅奥斯卡影后娜塔莉—波特曼的这间公寓，每件家具都有光滑的线条感…</a>
         </p>
+        <!-- 下面分段部分 -->
         <ul>
             <li><a href="#">流光溢彩 施华洛世奇系列珠宝</a></li>
             <li><a href="#">流光溢彩 施华洛世奇系列珠宝</a></li>
