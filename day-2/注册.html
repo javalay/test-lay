@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            /* background: #ccc; */
+        }
+    div{
+        margin: 0 auto;
+        width: 500px;
+        background-color: #fff;
+        /* background-color: pink; */
+    }
+    table{
+        width: 500px;
+        font-size: 14px;
+        border-collapse: collapse;
+        line-height: 50px;
+    }
+    td:nth-of-type(1){
+        text-align: right;
+        width: 76px;
+    }
+    td:nth-of-type(2){
+        padding-left:10px; 
+        width: 412px;
+        height: 52px;
+    }
+    input{
+        height: 30px;
+        width: 311px;
+        border: none;
+        background-color: rgb(235, 235, 228);
+        /* 圆角设置 */
+        border-radius: 5px;
+    }
+    select{
+        height: 28px;
+        width: 72px;
+        border:1px solid gray;
+        text-align: right;
+    }
+      .gouxuan {
+        width: 13px;
+        height: 13px;
+        vertical-align: middle;
+        margin: -3px 8px 0px 0px;
+      }
+      .gouxuan1 {
+          /* text-align:center; */
+        width: 350px;
+        font-size: 10px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .butt {
+          /* 变成行内块元素。 */
+        display: inline-block;
+        height: 44px;
+        width: 178px;
+        background-color:rgb(255, 40, 50);
+        border-radius: 22px;
+        color: #fff;
+        font-size: 22px;
+        /* 里面的字体居中显示 */
+        text-align: center;
+        /* 朝左边显示 30px*/
+        margin-left: 30px;
+        color: #fff;
+        /* 字体在input里面显示的高度 */
+        line-height: 44px;
+      }
+      .in-1{
+          width: 80px;
+      }
+      .in-2{
+        width: 100px;
+        margin: 0 15px;
+      }
+      .in-3{
+        width: 100px;
+      }
+      .in-4{
+        width: 190px;
+        /* margin 设置四个值 上右下左 或者 上下 右左 两个合并的来设置 */
+        margin: 1px 0 0 0;
+      }
+      .img{
+          width: 114px;
+          height: 40px;
+          /* 这改变图片的四个角 */
+          border-radius: 8px;
+          /* verticacl-align:middle 这是设置images的属性，把此元素放置在父元素的中部。 */
+          vertical-align:middle;
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>账户信息</h3>
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text"> </td>
+            </tr>
+            <tr>
+                <td>设置密码</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="text"></td>
+            </tr>
+        </table>
+        <h3>企业联系人信息</h3>
+        <table>
+            <tr>
+                <td>公司名称</td>
+                <td><input type="text"  placeholder="请填写单位执照上的名称"></td>
+            </tr>
+            <tr>
+                <td>公司地址</td>
+                <td>
+                    <select name="" id="">
+                        <option value="0">点击选择地址</option>
+                        <option value="0">杭州</option>
+                        <option value="1">江苏</option>
+                        <option value="2">蜀州</option>
+                    </select>
+                    <select name="" id="">
+                            <option value="0">点击选择地址</option>
+                            <option value="0">大连</option>
+                            <option value="1">连云港</option>
+                            <option value="2">华山</option>
+                        </select>
+                        <select name="" id="">
+                                <option value="0">点击选择地址</option>
+                                <option value="0">西湖区</option>
+                                <option value="1">萧山区</option>
+                                <option value="2">余杭区</option>
+                            </select>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" placeholder="请填写街道地址"></td>
+            </tr>
+            <tr>
+                <td>公司邮箱</td>
+                <td><input type="text" placeholder="建议填写企业邮箱"></td>
+            </tr>
+            <tr>
+                <td>固定电话</td>
+                <td><input type="text" class="in-1"><input type="text" class="in-2"><input type="text" class="in-3"></td>
+
+            </tr>
+            <tr>
+                <label ></label>
+                <td>联系人姓名</td>
+                <td><input type="text"></td>
+            </label>
+            </tr>
+            <tr>
+                <label for="">
+                <td>验证码</td>
+                <td><input type="text" placeholder="请输入验证码" class="in-4"> <img src="images/ww.jpg" class="img"></td>
+            </label>
+            </tr>
+            <!-- 底部条款部分 -->
+            <tr>
+                <td></td>
+                <td class="gouxuan1">
+                    <input type="checkbox" class="gouxuan">我已阅读并同意
+                    <a href="#" class="wenzi">《当当交易条款》</a>和
+                    <a href="#" class="wenzi">《当当社区条款》</a>
+                </td>
+            </tr>
+            <!-- 立即注册 -->
+            <tr>
+                <td></td>
+                <td><a href="#"class="butt">立即注册</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
