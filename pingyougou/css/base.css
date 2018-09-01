@@ -12,7 +12,7 @@ i {
 li {
     list-style: none;
 }
-/*图片没有边框   去掉图片底侧的空白缝隙*/
+/*图片没有边框   去掉图片底侧的空白缝隙 把此元素放置在父元素的中部。*/
 img {
     border: 0;  /*ie6*/
     vertical-align: middle;

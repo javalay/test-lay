@@ -135,5 +135,325 @@
         padding: 0 3px;
         line-height: 14px;
         color: #fff;
+        /* 改变圆角 */
         border-radius: 7px 7px 7px 0;
+    }
+    .nav{
+        height: 45px;
+        border-bottom:  2px solid  #b1191a;
+    }
+    .dropdown{
+        width: 209px;
+        height: 45px;
+    }
+    .dt{
+        height: 100%;
+        background-color: #b1191a;
+        font-size: 16px;
+        line-height: 45px;
+        text-align: center;
+        color: #fff;    
+    }
+    .dd{
+        height: 465px;
+        background-color: #c81623;
+        margin-top: 2px;
+    }
+    .menu_item{
+        /* 行高 和盒子的高度一样  字体居中*/
+        height: 31px;
+        line-height: 31px;
+        margin-left: 1px;
+        padding: 0 10px;
+    }
+    .menu_item a{
+        font-size: 14px;
+        color: #fff;
+    }
+    /* 鼠标经过li时 a会改变颜色 */
+    .menu_item:hover a {
+        color: #c81623;
+    }
+    /* 鼠标经过li时 li改变颜色 */
+    .menu_item:hover{
+        background-color: #fff;
+    }
+    /* i元素 右浮动 字体时icomoon*/
+    .menu_item i{
+        float: right;
+        font-family: 'icomoon';
+        font-size: 18px;
+        color: #fff;
+    }
+    .navitems{
+        /* 盒子 的margin左边距10px */
+        margin-left: 10px;
+    }
+    .navitems li{
+        float: left;
+    }
+    .navitems li a{
+        display: block;
+        height: 45px;
+        padding: 0 25px;
+        line-height: 45px;
+        font-size: 16px;
+    }
+    .main{
+        width: 980px;
+        height: 455px;
+        margin-left: 219px;
+        margin-top: 10px;
+    }
+    /* 子绝父相 对于下面的小点*/
+    .focus{
+        position: relative;
+        width: 720px;
+        height: 455px;
+        background-color: purple;
+    }
+    /* 图标右边距离是0 */
+    .arrow-r{
+        right: 0;
+    }
+    /* 这是对控件进行
+     绝对定位  
+     把这个控件看成是一种字体*/
+    .arrow-l,
+    .arrow-r{
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        width: 24px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        background: #0000004d;
+        font-family: 'icomoon';
+        font-size: 18px;
+    }
+    .circle{
+        position: absolute;
+        bottom:10px;
+        left: 50px;
+    }
+    .circle li{
+        float: left;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #ffffff80;
+        margin: 0 3px;
+        /* 图像变为圆形 */
+        border-radius: 50%;
+        /* 光标呈现为指示链接的指针（一只手） */
+        cursor: pointer;
+    }
+    .current{
+        background-color: #fff;
+    }
+    .newsflash{
+        width: 250px;
+        height: 455px;
+    }
+    .news{
+        height: 163px;
+        border: 1px solid #ccc;
+    }
+    .news-hd{
+        height: 32px;
+        border-bottom: 1px dotted #ccc;
+        padding: 0 15px;
+        font-size: 14px;
+        line-height: 32px;
+    }
+    .news-hd a{
+        float: right;
+        font-family: 'icomoon';
+        font-size: 12px;
+    }
+    .news-bd{
+        padding: 10px 0 0 15px;
+    }
+    .news-bd li{
+        height: 23px;
+    }
+    .lifeservice{
+        overflow: hidden;
+        height: 208px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+    .lifeservice ul{
+        width: 252px;
+    }
+    /* 设置li的高和宽  右和下边框 */
+    .lifeservice li{
+        position: relative;
+        float: left;
+        width: 62px;
+        height: 70px;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    .lifeservice li a{
+        display: block;
+        overflow: hidden;
+        height: 100%;
+    }
+    .lifeservice li p{
+        text-align: center;
+    }
+    .service_ico{
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(../img/icons.png)no-repeat;
+        margin: 10px auto;
+    }
+    .service_ico_huafei{
+        background-position: -17px -16px;
+    }
+    .service_ico_q{
+        background-position: -79px -16px;
+    }
+    .service_ico_w{
+        background-position: -142px -16px;
+    }
+    .service_ico_e{
+        background-position: -205px -16px;
+    }
+    .service_ico_r{
+        background-position: -17px -88px;
+    }
+    .service_ico_t{
+        background-position: -78px -88px;
+    }
+    .service_ico_y{
+        background-position: -141px -88px;
+    }
+    .service_ico_u{
+        background-position: -206px -88px;
+    }
+    .service_ico_i{
+        background-position: -17px -159px;
+    }
+    .service_ico_o{
+        background-position: -78px -159px;
+    }
+    .service_ico_p{
+        background-position: -141px -159px;
+    }
+    .service_ico_a{
+        background-position: -207px -159px;
+    }
+    .bargain{
+        height: 80px;
+        margin-top: 4px;
+    }
+
+
+/* <!-- 推荐服务模块 start --> */
+
+    .recommed{
+        height: 163px;
+        margin-top: 10px;
+    }
+    .recom-hd{
+        width: 200px;
+        height: 163px;
+        background-color: #5c5251;
+        text-align: center;
+    }
+    .recom-hd img{
+        margin: 30px 0 10px 0;
+    }
+    .recom-hd h3{
+        font-size: 18px;
+        color: #fff;
+        /* 不加粗 */
+        font-weight: normal;
+    }
+    .recom-bd{
+        width: 1000px;
+        height: 163px;
+        background-color: #ebebeb;
+    }
+    .recom-bd li{
+        float: left;
+        width: 249px;
+        height: 145px;
+        border-right: 1px solid #ccc;
+        margin-top: 10px;
+    }
+    .footer{
+        height: 386px;
+        background-color: #f5f5f5;
+        padding-top: 30px;
+    }
+    /*  给定一个高后 盒子就不会漂浮后没有 数据*/
+    .mod_service{
+        height: 79px;
+        border-bottom: 1px solid #ccc;
+    }
+    .mod_service li{
+        float: left;
+        width: 240px;
+        height: 79px;
+    }
+    .mod-service-icon{
+        float: left;
+        width: 50px;
+        height: 50px;
+        margin-left: 35px;
+        background: url(../img/icons.png)no-repeat;
+    }
+    .mod_service_tit{
+        float: left;
+        margin-left: 5px;
+    }
+    .mod_service_zheng{
+        background-position: -253px -3px;
+    }
+    .mod_service_s{
+        background-position:  -255px -53px;
+    }
+    .mod_service_d{
+        background-position:  -256px -105px;
+    }
+    .mod_service_f{
+        background-position:  -257px -156px;
+    }    
+    .mod_service_g{
+        background-position:  -257px -209px;
+    }
+    .mod_help{
+        height: 187px;
+        border-bottom: 1px solid #ccc;
+    }
+    .mod_help_item{
+        float: left;
+        width: 150px;
+        padding: 20px 0 0 50px;
+    }
+    .mod_help_item dt{
+        height: 25px;
+        font-size: 16px;
+    }
+    .mod_help_item dd{
+        height: 22px;
+    }
+    .mod_help_app{
+        float: left;
+        width: 150px;
+        padding: 20px 0 0 50px;
+    }
+    .mod_help_app dt{
+        padding-left: 15px;
+    }
+    .mod_help_app img{
+        margin: 7px 0;
+    }
+    .mod_help_app p{
+        padding-left: 15px;
     }
