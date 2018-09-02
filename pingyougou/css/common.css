@@ -10,6 +10,7 @@
     width: 1200px;
     margin: 0 auto;
 }
+/* 引用网上图标 */
 @font-face {
     font-family: 'icomoon';
     src:  url('../fonts/icomoon.eot?7kkyc2');
@@ -34,20 +35,8 @@
     .shortcut li{
         float: left;
     }
-    /* 版心 */
-    .w{
-        width: 1200px;
-        margin: 0 auto;
-    }
-    .fl{
-        float: left;
-    }
     .style-red{
         color: #c81623;
-    }
-    .fr
-    {
-        float: right;
     }
     /* 这是a标签之间的 小黑线 */
     .spacer{
@@ -124,7 +113,6 @@
     .arrow{
         font-family: "icomoon";
         margin-left: 5px;
-
     }
     .count{
         position: absolute;
@@ -352,9 +340,7 @@
         margin-top: 4px;
     }
 
-
-/* <!-- 推荐服务模块 start --> */
-
+    /*  推荐服务模块 start  */
     .recommed{
         height: 163px;
         margin-top: 10px;
@@ -456,4 +442,13 @@
     }
     .mod_help_app p{
         padding-left: 15px;
+    }
+    .mod_copyright{
+        text-align: center;
+    }
+    .mod_copyright_links{
+        margin: 20px 0 13px 0;
+    }
+    .mod_copyright_info{
+        line-height: 18px;
     }

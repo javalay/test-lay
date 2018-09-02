@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>改变为行内快元素</title>
+    <style>
+    .main{
+        /* 整体字体居中显示 */
+        text-align: center;
+    }
+    .main span{
+        font-weight: 900;
+        font-size: 15px;
+    }
+    .bootom{
+        /* overflow: hidden; */
+        margin: 0 auto;
+        /* width: 875px; */
+    }
+    .pic{
+        /* 变为行内快元素 可以显示在一行内 */
+        /* display: inline-block; */
+        float: left;
+        border: 1px solid #ccc;
+        padding: 0 4px;
+    }
+    .pic p{
+        font-size: 12px;
+        font-family: "微软雅黑";
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <span>家居大视野</span>
+        </div>
+        <div class="bootom">
+            <div class="pic">
+                <img src="images/bj01.jpg">
+                <p>室外居家空间设计</p>
+            </div>
+            <div class="pic">
+                <img src="images/bj02.jpg">
+                <p>室外居家空间设计</p>
+            </div>
+            <div class="pic">
+                <img src="images/bj03.jpg">
+                <p>室外居家空间设计</p>
+            </div>
+            <div class="pic">
+                <img src="images/bj04.jpg">
+                <p>室外居家空间设计</p>
+            </div>
+            <div class="pic">
+                <img src="images/bj05.jpg">
+                <p>室外居家空间设计</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
