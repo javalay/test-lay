@@ -9,7 +9,8 @@
 .registerarea{
     width: 1200px;
     margin: auto;
-
+    height: 520px;
+    border: 1px solid #ccc;
 }
 h3{
     font-weight: 400;
@@ -18,4 +19,112 @@ h3{
     line-height: 40px;
     height: 40px;
     background-color: #ececec;
+} 
+em{
+    float: right;
+}
+em a{
+    color: #cc101e;
+}
+.reg-form{
+    width: 600px;
+    height: 400px;
+    margin: 40px auto 0;
+}
+.reg-form li{
+    margin-bottom: 15px;
+}
+.reg-form label{
+    /* 转换为行内快元素 */
+    display: inline-block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: right;
+}
+.inp{
+    width: 238px;
+    height: 36px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+.error{
+    color: #cc101e;
+}
+.error_icon{
+    width: 20px;
+    height: 20px;
+    /* 转换为行内快元素  */
+    display: inline-block;
+    margin-top: -2px;
+    /* 把此元素放置在父元素的中部。 */
+    vertical-align: middle;
+    background: url(../img/error.png)no-repeat;
+}
+.success{
+    color: #40b73f;
+}
+.success_icon{
+    width: 20px;
+    height: 20px;
+    /* 转换为行内快元素  */
+    display: inline-block;
+    margin-top: -2px;
+    /* 把此元素放置在父元素的中部。 */
+    vertical-align: middle;
+    background: url(../img/success.png)no-repeat;
+}
+.safe{
+    overflow: hidden;
+    padding-left: 192px;
+    color: #b2b2b2;
+}
+.safe span{
+    float: left;
+}
+.safe em{
+    float: left;
+    padding: 0 12px;
+    margin: 0 1px;
+    color: #fff;
+}
+.ruo{
+    background-color: #de1111;
+}
+.zhong{
+    background-color: #40b83f;
+}
+.qiang{
+    background-color: #f79100;
+}
+.agree{
+    padding-top: 20px;
+    margin-left: 100px;
+}
+.agree input{
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.agree a{
+    color: #219df3;
+}
+.over{
+    border: none;
+    width: 200px;
+    height: 34px;
+    font-size: 14px;;
+    background-color: #c81622;
+    color: white;
+    margin:30px 0 0 130px;
+}
+.footer{
+    text-align: center;
+    height: 130px;
+}
+.links{
+    margin-top: 20px;
+    height: 30px;
+}
+.copyright{
+    line-height: 20px;
 }
