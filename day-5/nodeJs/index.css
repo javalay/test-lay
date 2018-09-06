@@ -1,0 +1,202 @@
+body{
+    font: 400 20px/1.5 "Source Sans Pro", "Open Sans", Roboto, "San Francisco", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.w{
+    position: relative;
+    text-align: center;
+    height: 127px;
+    background-color:#333333;
+}
+.e{
+    margin: 0 auto;
+    overflow: hidden;
+    height: 127px;
+    width:980px;
+}
+div.logo{
+    height: 75px;
+    margin: 0.5em auto 0px;
+}
+.r{
+    padding-left: 0px;
+    margin-top: 4px;
+    height: 42px;
+    margin-bottom: 0;
+}
+.r li{
+    font-size: 14px;
+    width: 60px;
+    display: inline-block;
+    height: 24px;
+    padding-bottom: 12px;
+}
+.r a{
+    text-decoration: none;
+    color: #cccccc;
+}
+.r a:hover{
+    text-decoration: underline;
+}
+.p{
+    height: 13px;
+    color: #cccccc;
+}
+.cc{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.l{
+    position: absolute;
+    left: 40%;
+    width: 0px;
+    margin: 0 auto;
+    border: none;
+    border-top: 15px solid #333;
+    border-left: 15px solid white;
+    border-right: 15px solid white;
+    border-bottom: 10px solid white;
+}
+.t{
+    width: 100%;
+    padding: 0 20px;
+    width: 980px;
+    margin: 0 auto;
+}
+.y{
+    font-size: 18px;;
+    text-align: center;
+    margin-bottom:20px;
+    background: #eaf5e9;
+}
+.y ul{
+    font-weight: 530;
+    font-size: 20px;
+    margin-top: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+.y li{
+    float: left;
+    width: 326px;
+    height: 142px;
+    flex-grow: 1;
+    display: flex;
+}
+.y p{
+    color: #666;
+}
+.y a{
+    padding-top: 20px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: #026e00;
+}
+.y a:hover{
+    background:#43853d;
+    color: #fff;
+    text-align: center;
+}
+.n{
+    margin: 0 auto;
+    width: 52px;
+    height: 47px;
+    background-image: url(images/win.jpg);
+}
+.m{
+    margin: 0 auto;
+    width: 42px;
+    height: 49px;
+    background-image: url(images/apple.jpg);
+}
+.b{
+    margin: 0 auto;
+    width: 52px;
+    height: 49px;
+    background-image: url(images/code.jpg);
+}
+.y a:hover .n{
+    background-image: url(images/win-hover.jpg);
+}
+.y a:hover .m{
+    background-image: url(images/apple-hover.jpg);
+}
+.y a:hover .b{
+    background-image: url(images/code-hover.jpg);
+}
+.y a:hover p{
+    color: #fff;
+}
+.y p{
+    font-size: 10px;
+}
+.u{
+    width: 100%;
+}
+.u tr{
+    height: 100%;
+}
+.u th{
+    text-align: left;
+    width: 33%;
+}
+.u td{
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.u a:active{
+    background-color:#43853d; 
+    color: #fff;
+}
+.u a{
+    color: #43853D;
+    display: block;
+    font-size: 0.8em;
+    height: 100%;
+    width: 100%;
+}
+.u a:hover{
+    border-radius: 2px;
+    cursor: pointer;
+    background-color:#43853d; 
+    color: #fff;
+    background-image: url(images/);
+}
+.i{
+    background-color: #333333;
+    height: 100%;
+    overflow: hidden;
+}
+.o{
+    height: 100%;
+    width: 980px;
+    margin: 0 auto;
+}
+.o p{
+    padding: 14px 20px;
+    color: white;
+    font-size: 14px;
+}
+.o p a{
+    color: #3C7B37;
+    text-decoration: none;
+}
+.o p a:hover{
+    text-decoration: underline;
+}
+.o span{
+    float: right;
+}
+.o span a{
+    color: #CCCCC2;
+    text-decoration: none;
+}
+.o span a:hover{
+    text-decoration: underline;
+}
+.mm{
+    height: 230px;
+}
