@@ -187,6 +187,34 @@ float: left;
 .addcar:hover{
     color: #ccc;
 }
+.aside{
+    width: 208px;
+    border: 1px solid #ccc;
+}
+.tab_list{
+    overflow: hidden;
+    height: 34px;
+}
+.tab_list li{
+    float: left;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+}
+.tab_list .current{
+    background-color: #fff;
+    border-bottom: 0;
+    color: red;
+}
+.first_tab {
+    width: 104px;
+}
+.second_tab{
+    width: 103px;
+    border-left: 1px solid #ccc;
+}
 .tab_con{
     padding: 0 10px;
 }
@@ -213,4 +241,35 @@ float: left;
     margin: 10PX auto;
     text-align: center;
     line-height: 26px;
+}
+.detail{
+    width: 978px;
+}
+.detail_tab_list{
+    height: 39px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.detail_tab_list .current{
+    background-color: #c81623;
+    color: #fff;
+}
+.detail_tab_list li{
+    float: left;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.detail_tab_con{
+    padding: 20px 0 0 20px;
+}
+.detail_tab_con li{
+    line-height: 22px;
+}
+.more{
+    float: right;
+    font-weight: 700;
+    font-family: 'icomoon';
 }
