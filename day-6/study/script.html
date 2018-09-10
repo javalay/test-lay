@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    // var num=10;
+    // var str="小白";
+    // var flag=true;
+    // var nll=null;
+    // var undef;
+    // var obj=new Object();
+    // // 下面是使用typeof 获取变量的类型
+    // console.log(typeof num);//number
+    // console.log(typeof str);//string
+    // console.log(typeof flag);//boolean
+    // console.log(String(nll));//不是null
+    // console.log(typeof undef);
+    // // console.log(obj);
+    // var num=12;//十进制 是12
+    // console.log(num);
+    // var num2=012;//八进制已0开头   是10
+    // console.log(num2);
+    // var num3=0x1a;//十六进制已0x开头
+    // console.log(num3);
+    // console.log(Number.MAX_VALUE);//数字的最大值
+
+    // console.log(Number.MIN_VALUE);//数字的最小值
+
+    //不要用小数验证小数
+    // var x=0.1;
+    // var y=0.2;
+    // var sum=x+y;
+    // console.log(sum==.3);
+
+    // var num;
+    // var str="您好"
+    // console.log(num+10==NaN);
+    // console.log("您号"=="我好");
+    //isNaN s是不是 不是一个数字，不是数字为true 是数字为false
+    //  不是一个数字吗。 NaN 不是一个数字  判断结果是不是一个数字为true  是数字结果为false
+    // console.log(isNaN(10));
+
+        // var str="what are you no sha leddddddddi";
+        // console.log(str.length);
+
+        // console.log(parseInt("10.22"));
+        // console.log(parseInt("12svfafgv"));
+        // console.log(parseInt("g10"));
+        // console.log(parseInt("10,8sdv"));
+
+        // console.log(parseFloat("10.22"));
+        // console.log(parseFloat("12svfafgv"));
+        // console.log(parseFloat("g10"));
+        // console.log(parseFloat("10.8sdv"));
+
+        // console.log(Number("10.22"));
+        // console.log(Number("12svfafgv"));
+        // console.log(Number("g10"));
+        // console.log(Number("10.8sdv"));
+        
+        // var num=10;
+        // console.log(num.toString());
+        // console.log(+num);
+    
+        // console.log(Boolean(1));
+        // console.log(Boolean(0));
+        // console.log(Boolean(11));
+        // console.log(Boolean(-10));
+        // console.log(Boolean("哈哈"));
+        // console.log(Boolean(undefined));
+        // console.log(Boolean(null));
+        // console.log(Boolean(""));
+
+
+        var num=20;
+        var result=num/3;
+        console.log(result);
+
+
+        var result=num%3;//取余数
+        console.log(result);
+        var num=20;
+        // num -=2;
+        // num +=2;
+        // num *=2;
+        // num /=2;
+        // num %=2;
+        console.log(num);
+        console.log(5<10);
+        var num1=10;
+        var num2=20;
+        // false&&false
+        console.log(num1==num2&&5>5);
+        
+        // false||true&&true&&true
+        var str=(4 >= 6||'人'!= '狗' && !(12*2==144)&&true);
+        console.log(str);
+        var num=10;
+        // true&&true
+        var result2=(5==num / 2 && (2+2*num).toString()==='22');
+        console.log(result2);
+
+        var num=12;
+        num++;
+        console.log(num);
+
+        var num=10;
+        ++num;
+        console.log(num);
+        // 如果++ 在后面 如num++ +10 参与运算
+        // 先参与运算，运算结束后自身再加一
+        var num=10;
+        var sum=num++ +10;
+        console.log((sum));
+
+
+        // 如果++ 在前面 如++num +10 参与运算
+        // 先自身加一 然后再参与运算
+        var num=10
+        var sum=++num +10;
+        console.log(sum);
+    //  先判断表达式的结果是true 还是false 
+    // 如果是true 则执行代码块1
+    // 如果是false 大括号中的代码是不执行的（执行代码块2）
+        var age=10;
+        if (age>=18) {
+            console.log("可以看电影了嘎嘎");
+        }else{
+            console.log("看什么看。回家写作业");
+        }
+          
+        //  弹框 -- 并且输入 输入的内容再age变量里面中
+        // console。log(age) 最终的结果是字符串的类型
+        // var age=parseInt(prompt("请您输入年龄"));
+        console.log(age);
+
+        // 找到两个数字中的最大值
+        var num1=60;
+        var num2=20;
+        if (num1>num2) {
+            console.log(num1);
+        }else{
+            console.log(num2);
+        }
+        // 判断这个数字是奇数还是偶数
+        // var number=parseInt(prompt("请输入数字"));
+        var number=9;
+        if (number%2==0) {
+            console.log("偶数");
+        }else{
+            console.log("奇数");
+        }
+
+        // 三元表达式
+        /*
+         运算符号： ?
+         语法：
+            var 变量=表达式1？表达式2：表达式3；
+            执行过程：
+            表达式1的结果是true还是false 如果是true则执行表达式2，然后把结果给变量，
+            如果表达式1 的结果是false 则执行表达式3 把结果给变量
+        */
+    //    var x=10;
+    //    var y=20;
+    //    var result=x>y?x:y;
+    //    console.log(result);
+        
+
+    //     var age = 10;
+    //     var resule=age>=18?"成年了":"未成年";
+    //     console.log(resule);
+
+        // 总结大多数情况，使用if-else 的语句都可以用三元表达式的方式来表示
+
+
+
+        // 先把输入的是转换为数字
+         var score=Number(prompt("请输入您的成绩"));
+    if(!isNaN(score)){//如果为true 就说明 不是数字 
+        // var score=90;
+        if (score>90&&score<=100) {
+            console.log("A级");
+        }else if(score>80){
+            console.log("B级");
+        }else if(score>70){
+            console.log("C级");
+        }else if(score>=60){
+            console.log("D级");
+        }else{
+            console.log("不及格");
+        }
+        }else{
+            console.log("您输入的有误");
+    }
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
