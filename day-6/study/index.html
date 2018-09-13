@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header 头部部分 -->
-    <div class="header w">
+    <div class="header w clearfix">
         <div class="logo">
             <img src="images/logo.png">
         </div>
@@ -26,11 +26,12 @@
         </div>
         <div class="user">
             <div class="user-a">
-                <img src="images/user.png">
+                <img src="images/user.png" style="vertical-align:middle">
+                qq-leishui
             </div>
-            <span>
+            <!-- <span>
                     qq-leishui
-            </span> 
+            </span>  -->
         </div>
     </div>
     <!-- header 头部结束部分 -->
@@ -132,6 +133,7 @@
             <ul class="clearfix">
                 <li>
                     <img src="images/images/cu_03.png">
+                    <img src="images/hot.png" class="box-dw">
                     <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                     <p>
                         <span>高级</span>
@@ -139,6 +141,7 @@
                     </p>
                 </li>
                 <li>
+                        <img src="images/hot.png" class="box-dw">
                     <img src="images/images/cu_05.png">
                     <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                     <p>
@@ -215,7 +218,7 @@
     </div>
     <div class="box w clearfix">
         <div class="q clearfix">
-        <div class="box-hd"><h3>编程入门</h3></div>
+        <div class="box-hd" id="box-a"><h3>编程入门</h3></div>
         <div class="zhong">
             <ul>
                 <li><a href="#" class="zhong-a">热门</a></li>
@@ -236,6 +239,7 @@
             <div class="box-abd">
                 <ul class="clearfix">
                     <li class="ww">
+                        <img src="images/hot.png" class="box-dw">
                         <img src="images/images/cu_03.png">
                         <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                         <p>
@@ -244,6 +248,7 @@
                         </p>
                     </li>
                     <li>
+                         <img src="images/hot.png" class="box-dw">
                         <img src="images/images/cu_05.png">
                         <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                         <p>
@@ -260,6 +265,7 @@
                         </p>
                     </li>
                     <li>
+                        <img src="images/hot.png" class="box-dw">
                         <img src="images/images/cu_11.jpg">
                         <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                         <p>
@@ -273,7 +279,7 @@
     </div>
     <div class="box w clearfix">
         <div class="q clearfix">
-        <div class="box-hd"><h3>编程入门</h3></div>
+        <div class="box-hd" id="box-b"><h3>数据分析</h3></div>
         <div class="zhong">
             <ul>
                 <li><a href="#" class="zhong-a">热门</a></li>
@@ -302,6 +308,7 @@
                         </p>
                     </li>
                     <li>
+                        <img src="images/hot.png" class="box-dw">
                         <img src="images/images/cu_05.png">
                         <h4>Think PHP 5.0 博客系统实战项目演练</h4>
                         <p>
@@ -331,7 +338,7 @@
     </div>
     <div class="box w clearfix">
         <div class="q clearfix">
-        <div class="box-hd"><h3>机器学习工程师</h3></div>
+        <div class="box-hd" id="box-c"><h3>机器学习工程师</h3></div>
         <div class="zhong">
             <ul>
                 <li><a href="#" class="zhong-a">热门</a></li>
@@ -389,7 +396,7 @@
     </div>
     <div class="box w clearfix">
         <div class="q">
-        <div class="box-hd"><h3>前端开发工程师</h3></div>
+        <div class="box-hd" id="box-d"><h3>前端开发工程师</h3></div>
         <div class="zhong">
             <ul>
                 <li><a href="#" class="zhong-a">热门</a></li>
@@ -448,10 +455,10 @@
     <!-- footer start -->
     <div class="fixedtool">
         <ul>
-            <li>编程入门</li>
-            <li>数据分析</li>
-            <li>机器学习工程师</li>
-            <li>前端开发工程师</li>
+            <li><a href="#box-a">编程入门</a></li>
+            <li><a href="#box-b">数据分析</a></li>
+            <li><a href="#box-c">机器学习工程师</a></li>
+            <li><a href="#box-d">前端开发工程师</a></li>
             <li>人工智能工程师</li>
             <li>全栈工程师</li>
             <li>iOS工程师</li>
