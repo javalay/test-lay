@@ -1,0 +1,51 @@
+/* css初始化 */
+body,ul,li,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,input{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font:14px arial,'microsoft yahei';
+	background-color: #fff;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: 400;
+}
+img{
+	border:0 none;
+	vertical-align: middle;
+}
+input{
+	border: 0;
+	outline-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clearfix:before,.clearfix:after{
+	content: "";
+	display: table;
+}
+.clearfix:after{
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}
+.w{
+	width: 1142px;
+	margin: 0 auto;
+}
