@@ -5,7 +5,6 @@
 .logo{
 	float: left;
 }
-
 .hea_a a{
 	float: left;
 	font-size: 17px;
@@ -16,8 +15,7 @@
 	float: right;
 }
 .hea_r a{
-	display: inline-block;;
-	// float: right;
+	float: right;
 	font-size: 17px;
 	color: #15c28a;
 	margin-left: 22px;	
@@ -46,7 +44,6 @@
 	position: absolute;
 	top: 180px;
 	right: 380px;
-
 }
 .ton_a span{
 	margin-top: 17px;
@@ -74,7 +71,7 @@
 	background-color: #fff;
 }
 .zon hr{
-	// height: 1px;
+	height: 1px;
 	background-color: #efefef;
 }
 .zhon{
@@ -198,7 +195,7 @@
 }
 .shen {
 	margin-bottom: 50px;
-	// margin-right: 20px;
+	margin-right: 20px;
 }
 .shen button{
 	float: right;
