@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //遍历数组
+//         function reverseArray(arr) {
+//             for (var i = 0; i < arr.length / 2; i++) {
+//                 var temp = arr[i];
+//                 arr[i] = arr[arr.length - 1 - i];
+//                 arr[arr.length - 1 - i] = temp;
+//             }
+//             return arr;
+//         }
+//         console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]));
+//         //遍历数组
+//         function reverseArray(arr) {
+//             for (var i = 0; i < arr.length / 2; i++) {
+//                 var temp = arr[i];
+//                 arr[i] = arr[arr.length - 1 - i];
+//                 arr[arr.length - 1 - i] = temp;
+//             }
+//             return arr;
+//         }
+//         console.log(reverseArray([1, 2, 3, 4, 5, 5, 7]));
+//         //通过函数遍历数组
+//         function sortArray(arr) {
+//             //控制比较的轮数
+//             for (var i = 0; i < arr.length - 1; i++) {
+//                 //控制每一轮的比较次数
+//                 for (var j = 0; j < arr.length - 1 - i; j++) {
+//                     if (arr[j] > arr[j + 1]) {
+//                         var temp = arr[j];
+//                         arr[j] = arr[j + 1];
+//                         arr[j + 1] = temp;
+//                     }
+//                 }
+//             }
+//             return arr;
+//         }
+
+//         //求一个数字 的阶乘
+//         function getjiecheng(num) {
+//             var result = 1;
+//             for (var i = 1; i <= num; i++) {
+//                 result *= i;
+//             }
+//             return result;
+//         }
+//         console.log(getjiecheng(9));
+
+
+//         function getjiechen(num) {
+//             var result = 1;
+//             for (var i = 1; i <= num; i++) {
+//                 result *= i;
+//             }
+//             return result;
+//         }
+//         console.log(getjiechen(9));
+
+//         function getjie(num) {
+//             var result = 1;
+//             for (var i = 1; i <= num; i++) {
+//                 result *= i;
+//             }
+//             return result;
+//         }
+
+//         function getFib(num) {
+//             var num1 = 1;
+//             var num2 = 1;
+//             var sum = 0;
+//             for (var i = 3; i <= num; i++) {
+//                 sum = num1 + num2;
+//                 num1 = num2;
+//                 num2 = sum;
+//             }
+//             return sum;
+//         }
+//         console.log(getFib(12));
+
+
+//         //输入年月日，获取这个日期是这一年的第多少天。
+
+//         //判断这个年份是不是闰年
+//         function isLeapYear(year) {
+//             return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+//         }
+
+//         function getDay(year, month, day) {
+//             //定义变量储存对应的天数
+//             var days = day;
+//             //如果用户输入的是一月份，没不要向后算天数，直接返回天数
+//             if (month == 1) {
+//                 return days;
+//             }
+//             //代码执行到这里 --说明用户输入的不是1月份
+//             //用户输入的是7月份23 1，2，3 +23
+//             //定义一个数组，储存每个月份的天数
+//             var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//             //小于的是输入的月份-1;
+//             for (var i = 0; i < month - 1; i++) {
+//                 days += months[i];
+//             }
+//             //需要判断这个年份是不是闰年
+//             if (isLeapYear(year) && month > 2) {
+//                 days++;
+//             }
+//             return days;
+//         }
+//         console.log(getDay(2000, 3, 2));
+
+//         //求一个数字阶乘的和  5 5的阶乘加4的阶乘加3的阶乘加2的阶乘加1的阶乘;
+//         function getJieSun(num) {
+//             var sum = 0;
+//             for (var i = 1; i <= num; i++) {
+//                 sum += getjiecheng(i);
+//             }
+//             return sum;
+//         }
+//         console.log(getJieSun(5));
+//         //函数内部可以调用其他的函数。
+//         function getDas(year, month, day) {
+//             // 定义变量储存对于的天数
+//             var days = day;
+//             if (month == 1) {
+//                 return days;
+//             }
+//             //代码执行到这里 说明用户输入不是一月
+//             //用户输入的是7月份23 1，2，3 +23
+//             //定义一个数组，储存每个月份的天数
+//             var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//             //小于的是输入的月份减一
+//             for (var i = 0; i < month - 1; i++) {
+//                 days += months[i];
+//             }
+//             //需要判断这个年份 是不是闰年
+//             if (isLeapYear(year) && month > 2) {
+//                 days++;
+//             }
+//             return days;
+//         }
+//         console.log(getDas(2000, 3, 1));
+// //建立一个函数
+//         function getDays(num) {
+//             //定义变量储存对于的天数
+//             var dyas = day;
+//             //判断月份是否等于一月。是一月就直接等于天数，不往下执行
+//             if (month == 1) {
+//                 return days;
+//             }
+//             //代码执行带这里，说明用户输入的不是一月
+//             //定义一个数组，储存每个月份的天数
+//             var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+//             //i  小于的是输入的月份减一
+//             for (var i = 0; i < month - 1; i++) {
+//                 days += months[i];
+//             }
+//             //需要判断输入的这个年份 是不是闰年
+//             if (isLeapYear(year) && month > 2) {
+//                 days++;
+//             }
+//             return days;
+//         }
+//         console.log(getDay(2018, 9, 27));
+
+
+//         //arguments 对象伪数组 求和
+//         function f3() {
+//             var sum=0;
+//             for(var i=0;i<arguments.length;i++){
+//                 sum+=arguments[i];
+//             }
+//             return sum;
+//         }
+//         console.log(f3(10,20));
+        
+        //命名函数
+        // function f2() {
+        //     console.log('你师叔');
+        // }
+        // f2 ();
+        //这种方式是匿名函数， 向对于上面的是重新 赋值
+        // var f2=function (){
+        //     console.log('你想肝肾');
+        // }
+            
+        // f2();
+
+        //函数的自调用，没有名字，调用--声明的同时直接调用、
+        // 一次性的
+        // (function(){console.log('你想啊不是')})();
+    
+        // function f1() {
+        //     console.log('你想干涉吗');
+        // }
+        // console.log(typeof f1);
+
+        // function f1(fn) {
+        //     fn();//函数的调用
+        // }
+        // function f2() {
+        //     console.log('这个还可以');
+        // }  
+        // f1(f2);
+        
+
+        //函数可以做为参数来使用，如果一个函数作为参数，那么我们说的这个参数（函数）可以叫做回调函数
+        //只要是看到一个函数作为参数使用了。那就是回调函数
+        // function sayHi(fn) {
+        //     console.log("您好啊！");
+        //     fn();
+        // }
+        // function suSay() {
+        //     console.log("我是谁，我怎么了。这是要干什么我怎么不知道");
+        // }
+        // sayHi(suSay);
+
+        //函数可以作为返回值使用
+        // function f1() {
+        //     console.log("f1函数调用了");
+        //     return function () {
+        //         console.log("函数做为返回值被调用了");
+        //     }
+        // }
+        // var ff= f1();
+        // ff();
+
+        //作用域 
+        //块级作用域，一对大括号就可以看成是一块，在这快区域中定义的变量，
+        //只能在这个区域中使用，但是在js中在在块级作用域中定义的变量，外面也能使用
+        //说明：js 没有块级作用域
+        
+        //全局变量 ：声明的变量是使用var声明的，那么这个变量就是全局变量，全局变量可以在页面的任何位置使用
+        //局部变量：在函数内部定义的变量，是局部变量，外面不能使用
+        //全局变量如果页面不关闭，那么就不会释放，就会占空间，消耗内存
+
+
+        //全局作用域：全局变量的使用范围
+        //局部作用域：局部变量的使用范围
+
+
+        // function f1() {
+        //     number=1000;
+        // }
+        // f1();
+        // console.log(number);
+        //隐式全局变量：声明的变量没有var ，就叫做隐式全局变量
+
+
+        //全局变量式不能被删除的，隐式全局变量式可以删除的，
+        //定义变量使用var 是不会被删除的，没有var是可以删除的
+        var num1=10;
+        num2=20;
+        delete num1;
+        delete num2;
+        console.log(typeof num1);
+        console.log(num1+10);
+        console.log(typeof num1);
+
+
+    /*
+        预解析: 就是在解析代码之前
+
+        把变量的声明提前了，提前到当前所在的作用域的最上面，不会赋值
+
+        函数的声明也会被提前--提前到当前所在的所用与的最上面，不会提升调用
+    */
+        var num;
+        console.log(num);
+        num=10;
+         
+         function f1() {
+             console.log("哈哈，你是谁");
+         }
+         f1();
+        
+        //函数调用的时候，把会函数的声明提升带作用域的上面，
+        f1();//调用
+        var num=20;//这个变量的声明会提升到变量使用之前
+        function f1() {
+            console.log(num);
+        }
+
+
+        //预解析中，变量的提升，只会在当前的作用域中提升，提前到当前的作用域的最上面
+
+        //函数中的变量只会提前到函数的作用域中的最前面，不会出去
+
+        //预解析，会分段
+    </script>
+</head>
+<body>
+</body>
+</html>
