@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #dv{
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="common.js">
+    </script>
+    <script>
+        var sum=1;
+        function fn(){
+            for(var i=0;i<10;i++){
+                sum+=i;
+            }
+            return sum;
+        }
+        console.log(fn());
+
+        function getArrMax(arr){
+            var max=arr[0];
+            for(var i=1;i<arr.length;i++){
+                if(max<arr[i]){
+                    max=arr[i];
+                }
+            }
+            return max;
+        }
+        console.log(getArrMax([5,2,5,234,234,2255,45,32,2]));
+
+        //遍历数组
+        function reverseArray(arr){
+            var newArr=[];
+//            for(var i=0;i<arr.length/2;i++){
+            for(var i=arr.length-1; i>=0;i--){
+                newArr[newArr.length]=arr[i];
+//                var temp=arr[i];
+//            arr[i]=arr[arr.length-i-1];
+//            arr[arr.length-i-1]=temp;
+        }
+            return newArr;
+        }
+        console.log(reverseArray([1,2,3,4,5,6,7,8,9,10]));
+
+        function sort(arr){
+            for(var i=0;i<arr.length-1;i++){
+                for(var j=0;j<arr.length-i-1;j++){
+                    if(arr[j]<arr[j+1]){
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([1,2,3,4,5,6,7,888,9,10]));
+
+        function getjiecheng(num){
+            var result=1;
+            for(var i=1;i<=num;i++){
+                result*=i;
+            }
+            return result;
+        }
+        console.log(getjiecheng(9));
+
+        function getjie(num){
+            var result=1;
+            for(var i =1;i<=num;i++){
+                result *=i;
+            }
+            return result;
+        }
+        console.log(getjie(14));
+
+
+        function isRun(year){
+            return year%4==0&&year%100!=0||year%400==0;
+        }
+        function getDay(year,month,day){
+            var days=day;
+            if(month == 1){
+                return days;
+            }
+            var  months=[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            for(var i=0;i<month-1;i++){
+                days += months[i];
+            }
+            if(isRun(year)&&month>2){
+                days++;
+            }
+            return days;
+        }
+        console.log(getDay(2000,3,2));
+        function getD(year,month,day){
+            var days=day;
+            if(isRun(year)&&month>2){
+                days++;
+            }
+            for(var i=1;i<month;i++){
+                switch(i) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        days +=31;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        days +=30;
+                        break;
+                    case 2:
+                        days +=28;
+                        break;
+                }
+            }
+            return days;
+        }
+        console.log(getD(2000,3,2));
+
+        var obj={
+            "name":"小米",
+            "age":20,
+            "sex":"男",
+            "height":198,
+            "weight":55
+        };
+        //遍历对象
+        for(var key in obj){
+            console.log(key+"=====>"+obj[key]);
+        }
+//自定义一个对象实现系统的max的方法
+        function MyMath() {
+            this.getMax=function () {
+                var max=arguments[0];
+                for(var i=0;i<arguments.length;i++){
+                    if (max<arguments[i]){
+                        max=arguments[i];
+                    }
+                }
+                return max;
+            };
+        }
+        //实例化对象
+        var mt=new MyMath();
+        var result=mt.getMax(10,2,.30,100);
+        console.log(result);
+
+        console.log(parseInt(Math.random()*5));
+
+        //随机产生一个十六进制的颜色值
+        //封装成一个函数
+        function getColor() {
+            var str="#";
+            var arr=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+            for(var i=0;i<6;i++){
+                var num=parseInt(Math.random()*16);
+                str+=arr[num];
+            }
+            return str;
+        }
+        //页面记载的事件
+        window.onload=function () {
+            //在文档中通过id属性的值查找这个元素（标签的值）。设置该标签的背景颜色
+            document.getElementById("dv").style.backgroundColor=getColor();
+        };
+        //这种是毫秒的计算
+    var dt=new Date();
+        console.log(dt);
+        var ddt=Date.now();
+        console.log(ddt);
+
+        //调用js文件
+        console.log(getDate(new Date()));
+
+    var str="skjdffbkerrgb";
+        var result=str.charAt(12);
+        console.log(result);
+        console.log(str.length);
+
+
+        var str=String.fromCharCode(109,108,109);
+        console.log(str);
+//字符串拼接
+        var str="小妮";
+        console.log(str.concat("喜欢","凤姐"));
+//从索引5的位置开始提取，到索引为10 的前一个结束。没有10；并返回提取后的字符串
+        var str="如果有一天我希尔了，你是谁";
+        str=str.slice(5,10);
+        console.log(str);
+
+
+        var str="乔峰|慕容|凤姐|小米|小红|华为";
+        var arr=str.split("|",6);
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+    </script>
+
+</head>
+<body>
+<div id="dv"></div>
+</body>
+</html>
