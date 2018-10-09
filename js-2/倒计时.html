@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var time = "2019-2-5 0:0:0";
+        function getLastTimes(time) {
+            var endTime = +new Date(time);//结束的时间毫秒
+            var nowTime = +new Date();//当前时间的毫秒值
+            var lastTime =parseInt((endTime - nowTime) / 1000);
+            d = parseInt(lastTime / 60 / 60 / 24); // 计算天数
+
+            h = parseInt(lastTime / 60 / 60 % 24); // 计算小时
+
+            m = parseInt(lastTime / 60 % 60); // 计算分数
+
+            s = parseInt(lastTime % 60); // 计算当前秒数  取余
+            console.log("还剩下"+d+"天"+h+"时"+m+"分"+s+"秒");
+            document.write("还剩下"+d+"天"+h+"时"+m+"分"+s+"秒");
+            // return "还剩下"+d+"天"+h+"时"+m+"分"+s+"秒";
+
+        }
+        // console.log(getLastTimes(time));
+        var flag=getLastTimes(time);
+        console.log(flag);
+        setInterval(function(){
+            getLastTimes(time);
+        },1000);
+        
+    </script>
+</body>
+
+</html>
