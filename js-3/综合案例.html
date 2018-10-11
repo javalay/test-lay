@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //   var obj={};
+        // obj.name="pang";
+        // obj["age"]=18;
+        // console.log(obj);
+        var url = 'http://www.itheima.com/login?name=zs&age=18';
+        var arr = url.split("?"); //分割数组
+        console.log(arr);
+        var str = arr[1];
+        console.log(str);
+        var arr1 = str.split("&");//风割数组
+        console.log(arr1);
+        var obj = {};
+        for (var i = 0; i < arr1.length; i++) {
+            var arr2 = arr1[i].split("=");
+            console.log(arr2);
+            obj[arr2[0]] = arr2[1];
+            console.log(obj);
+        }
+        var arr=["name","小虎"];
+        obj[arr[0]]=arr[1];
+        console.log(obj);
+        
+        var obj = {name: 'hi'
+        };
+        function f1(obj) {
+            obj.name = 'hello';
+            console.log(obj.name);
+        }
+        f1(obj);
+        console.log(obj.name);
+    </script>
+</body>
+
+</html>
