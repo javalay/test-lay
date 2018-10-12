@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test">
+        <input type="text" name="pn">
+        <p >你是谁</p>
+        <p>你先感受好呢嘛</p>
+    </div>
+    <span id="span"></span>
+    <div class="dv">你是</div>
+
+    <div class="a"></div>
+    <script>
+        var name=document.getElementsByName("pn");
+        console.log(name);
+        var lei=document.getElementsByClassName("dv");
+        console.log(lei);
+        //IE8+以上的版本才支持
+        //只获取复合条件的第一个元素-可以通过id，类名，标签名
+        var a=document.querySelector("div");
+        var a=document.querySelector(".dv");
+        console.log(a);
+        //返回匹配到所有的元素
+        var b=document.querySelectorAll("div");
+        console.log(b);
+        var divs = document.getElementsByTagName("div");
+        console.log(divs);
+        console.dir(divs);
+        for(var i=0;i<divs.length;i++){
+            console.log(divs[i]);
+        }
+        
+        var test = document.getElementById("test");
+        var ps=test.getElementsByTagName("p");
+        console.log(ps);
+        var span = document.getElementById("span");
+        console.dir(span); //HTMLSpanElement
+        console.dir(test); //HTMLDivElement
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+        </script>
+    <a href="http://www.baidu.com" id="btn">百度</a>
+    <script>
+        $("btn").onclick=function(){
+            console.log("你是谁");
+            return false;//添加return false后就不会跳转a标签所设置的链接
+        }
+    </script>
+</body>
+</html>

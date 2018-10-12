@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+    <div id="imagegallery">
+        <a href="Image-003_01.png" title="美女A">
+            <img src="Image-003_01.png" width="100px" alt="图片1"">
+        </a>
+        <a href="Image-003_02.png" title="美女B">
+            <img src="Image-003_02.png" width="100px" alt="图片2">
+        </a>
+        <a href="Image-003_03.png" title="美女C">
+            <img src="Image-003_03.png" width="100px" alt="图片3">
+        </a>
+    </div>
+    <img src="Image-003_01.png"width="450px" id="img">
+    <p id="dv"">选择一个图片</p>
+    <script>
+    var imagegallery= $("imagegallery"),
+    links=imagegallery.getElementsByTagName("a"),
+    p=$("dv");
+    for(var i=0;i<links.length;i++){
+        var link=links[i];
+        link.onclick=function(){
+            var image=$("img")
+            image.src=this.href;
+            p.innerHTML=this.title;
+            console.dir(imagegallery.innerText.length);
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>

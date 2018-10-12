@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function $(id){
+       return document.getElementById(id);
+    }
+    </script>
+    <input type="button" value="点击" id="btn">
+    <br>
+    <img src="Image-003_01.png" id="img">
+    <script>
+        var flag=1;
+        $("btn").onclick = function () {
+            var img=$("img");
+            if (flag === 1) {
+                img.src = "Image-003_02.png";
+                flag = 2;
+                console.log(flag);
+            } else if (flag === 2) {
+                console.log("111");
+                img.src = "Image-003_01.png";
+                flag = 1;
+            }
+        }
+        // var btn=$("btn"),
+        //     img=$("img"),
+        //     flag=1;
+        //     btn.onclick=function(){
+        //         if(flag===1){
+        //             img.src="Image-003_02.png";
+        //             flag=2;
+        //             console.log(flag);
+        //         }else if(flag===2){
+        //             console.log(flag);
+        //             img.src="Image-003_01.png";
+        //             flag=1;
+        //         }
+        //     }
+
+    </script>
+</body>
+
+</html>
