@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			padding: 100px 0 0 100px;
+		}
+		ul {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: skyblue;
+		}
+		#hold-nav > li {
+			float: left;
+			height: 25px;
+			margin: 0 5px;
+			background-color: skyblue;
+		}
+		#hold-nav > li > a {
+			font: 400 16px/25px consolas;
+			color: white;
+			padding: 0 10px;
+		}
+		#hold-nav > li ul {
+			display: none;
+		}
+		#hold-nav > li ul li {
+			height: 25px;
+			background-color: #e4e4e4;
+		}
+		#hold-nav > li ul li a{
+			font: 400 12px/25px consolas;
+			color: rgb(200,0,0);
+			padding: 0 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		 window.onload = function() {
+		 	var lis = $("hold-nav").childNodes;
+		 	for(var i = 0; i<lis.length;i++) {
+		 		lis[i].onmouseover = function() {
+		 			var child = this.childNodes[2];
+		 			//console.log(child);
+		 			child.style.display = "block";
+					 console.log(child);
+		 		};
+		 		lis[i].onmouseout = function() {
+		 			var child = this.childNodes[2];
+		 			//console.log(child);
+		 			child.style.display = "none";
+		 		}
+		 	}
+		 	// 封装一个通过id找到元素的方法
+		 	function $(id) {
+		 		return document.getElementById(id);
+		 	}
+		 }
+	</script>
+</head>
+<body>
+	<ul id="hold-nav">
+		<li><a href="javascipt:;">第1级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第1+1级列表</a></li>
+				<li><a href="javascipt:;">第1+1级列表</a></li>
+				<li><a href="javascipt:;">第1+1级列表</a></li>
+				<li><a href="javascipt:;">第1+1级列表</a></li>
+			</ul>
+		</li>
+		<li><a href="javascipt:;">第2级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第2+1级列表</a></li>
+				<li><a href="javascipt:;">第2+1级列表</a></li>
+				<li><a href="javascipt:;">第2+1级列表</a></li>
+				<li><a href="javascipt:;">第2+1级列表</a></li>
+			</ul>
+		</li>
+		<li><a href="javascipt:;">第3级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第3+1级列表</a></li>
+				<li><a href="javascipt:;">第3+1级列表</a></li>
+				<li><a href="javascipt:;">第3+1级列表</a></li>
+				<li><a href="javascipt:;">第3+1级列表</a></li>
+			</ul>
+		</li>
+		<li><a href="javascipt:;">第4级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第4+1级列表</a></li>
+				<li><a href="javascipt:;">第4+1级列表</a></li>
+				<li><a href="javascipt:;">第4+1级列表</a></li>
+				<li><a href="javascipt:;">第4+1级列表</a></li>
+			</ul>
+		</li>
+		<li><a href="javascipt:;">第5级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第5+1级列表</a></li>
+				<li><a href="javascipt:;">第5+1级列表</a></li>
+				<li><a href="javascipt:;">第5+1级列表</a></li>
+				<li><a href="javascipt:;">第5+1级列表</a></li>
+			</ul>
+		</li>
+		<li><a href="javascipt:;">第6级列表</a>
+			<ul>
+				<li><a href="javascipt:;">第6+1级列表</a></li>
+				<li><a href="javascipt:;">第6+1级列表</a></li>
+				<li><a href="javascipt:;">第6+1级列表</a></li>
+				<li><a href="javascipt:;">第6+1级列表</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
