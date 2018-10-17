@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    select{
+        width: 200px;
+        height: 200px;
+        background-color: #33cccc;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <!-- multiple属性规定输入字段可选择多个值 -->
+    <select multiple="multiple" id="all">
+        <option value="">苹果</option>
+        <option value="">橘子</option>
+        <option value="">梨</option>
+        <option value="">西瓜</option>
+        <option value="">水蜜桃</option>
+    </select>
+    <input type="button" value=">>" id="btn1">
+    <input type="button" value="<<" id="btn2">
+    <input type="button" value=">" id="btn3">
+    <input type="button" value="<" id="btn4">
+
+    <select multiple="multiple" id="select">
+    </select>
+    <script src="../../common.js"></script>
+    <script>
+    var all=$("all"),
+        select=$("select");
+        all.children[0].onclick=function(){
+            // alert("hello");
+        }
+        //全部选择
+        $("btn1").onclick=function(){
+            //先获取子元素的个数
+            //现在len的值 始终是当前获取到的all.children.length 当前个数是5
+            var len=all.children.length;
+            for(var i=0;i<len;i++){//循环遍历最原始的长度
+                console.log(all.children[0]);
+                var option=all.children[0];//把所有为0的元素添加到option标签中去
+                console.log(option);
+                select.appendChild(option);//然后把option标签添加到select标签中去
+            }
+        }
+        $("btn2").onclick=function(){
+            var len=select.children.length;
+            for(var i=0;i<len;i++){
+                console.log(len.length);
+                var option=select.children[0];
+                all.appendChild(option);
+            }
+        }
+        $("btn3").onclick=function(){
+            //找到所有选中的optin
+            var array=[];//储存选中的optin
+            for(var i=0;i<all.children.length;i++){
+                var option=all.children[i];
+                if(option.selected){//如果是选中状态下，那么就是true
+                    array.push(option);//把当前选中的option添加到array中去
+                    //去掉当前option的选中效果
+                    option.selected=false;
+                }
+            }
+            //把数组中的option移动到第二个select中
+            for(var i=0;i<array.length;i++){
+                var option=array[i];
+                select.appendChild(option);
+            }
+        }
+        $("btn4").onclick=function(){
+            var array=[];
+            for(var i=0;i<select.children.length;i++){
+                var option=select.children[i];
+                if(option.selected){
+                    array.push(option);
+                    option.selected=false;
+                }
+            }
+            // var sel=select.length;
+            // console.log(sel);
+            for(var i=0;i<array.length;i++){//这里要根据数组的长度来判断这个
+                console.log(select.length);
+                   var option=array[i];
+                all.appendChild(option);
+            }
+        }
+    </script>
+</body>
+</html>

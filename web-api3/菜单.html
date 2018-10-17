@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #list li {
+            list-style-type: none;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            background-color:beige;
+            text-align: center;
+            float: left;
+            margin-left: 5px;
+        }
+        #list li.current {
+            background-color: burlywood;
+        }
+        #list li a {
+            display: inline-block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul id="list">
+            <li class="current"><a href="javascript:void(0)">首页</a></li>
+            <li><a href="javascript:void(0)">博客</a></li>
+            <li><a href="javascript:void(0)">播客</a></li>
+            <li><a href="javascript:void(0)">相册</a></li>
+            <li><a href="javascript:void(0)">关于</a></li>
+            <li><a href="javascript:void(0)">帮助</a></li>
+        </ul>
+    </div>
+    <script>
+    var ul=document.getElementById("list"),
+        menu=document.getElementById("menu"),//获取最外层标签
+        list=ul.children;//通过查到所有子标签方法，查找到li
+    function fn(){
+        for(var i=0;i<list.length;i++){//循环遍历所有的 li标签的内样式
+            console.log(list[i]);
+            list[i].className="";
+        }
+        console.log(this); //li标签
+        this.className="current";
+    }
+    for(var i=0;i<list.length;i++){
+        list[i].onclick=fn;//这里是给li添加类样式
+    }
+    </script>
+</body>
+</html>

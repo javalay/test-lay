@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        b {
+            font-weight: normal;
+        }
+        #box {
+            width: 358px;
+            margin: 30px auto;
+            border: 2px solid #f1f1f1;
+        }
+        .kais {
+            color: #da501f;
+            cursor: pointer;
+            border-bottom: 2px solid #da501f;
+        }
+
+        .wenzi {
+            color: #da501f;
+        }
+
+        .nav span {
+            display: inline-block;
+            line-height: 27px;
+            width: 45px;
+            font-size: 16px;
+            margin: 10px 10px 12px;
+            font-family: "微软雅黑";
+            text-align: center;
+        }
+
+        .content li {
+            margin: 0 22px;
+        }
+
+        .content li a {
+            position: relative;
+            color: #000;
+            line-height: 25px;
+            font-family: "微软雅黑";
+            font-size: 15px;
+        }
+
+        .content li {
+            display: none;
+        }
+
+        .content .xianshi {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="nav">
+            <span class="kais">公告</span>
+            <span>规则</span>
+            <span>论坛</span>
+            <span>安全</span>
+            <span>公益</span>
+        </div>
+        <div class="content">
+            <ul>
+                <li class="xianshi"><a href="#"><b class="wenzi">阿里首席平台治理官郑俊芳当选年度"质量人物</b>阿里招人工智能训练师 第二届阿里年货节启动</a></li>
+                <li><a href="#"><b class="wenzi">不正当谋利规则变更淘宝亲宝贝市场管理规范</b>淘宝价格发布规范变更店铺相关规则调整变更</a></li>
+                <li><a href="#"><b class="wenzi">双十二开始报名啦淘宝论坛招募志愿者名师一</b>刻-5个亿的秘密十八纸颠覆家具想象</a></li>
+                <li><a href="#"><b class="wenzi">首次揭秘打假特战队——《刀尖上的舞者》千</b>万商家喜欢这只象重交“保证金”？</a></li>
+                <li><a href="#"><b class="wenzi">大众评审乡村医院开建闲鱼公益上线招募NGO</b>阿里与残联出助残政策公益宝贝卖家发票索取</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var box = document.getElementById("box"),
+            spans = box.getElementsByTagName("span"),
+            lis = box.getElementsByTagName("li");
+            //循环遍历 span标签
+            for(var i=0;i<spans.length;i++){
+                spans[i].index=i;//自定义index并赋值
+                console.log(i);//所有的span按钮的循环后，然后再进行监控鼠标是否进入
+                spans[i].onmousemove=function(){
+                    for(var i=0;i<spans.length;i++){
+                        spans[i].className="";
+                        lis[i].className="";
+                    }
+                    this.className="kais";
+                    lis[this.index].className="xianshi";
+                }
+            }
+    </script>
+</body>
+
+</html>

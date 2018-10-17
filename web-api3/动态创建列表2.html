@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 300px;
+            border: 2px dashed forestgreen;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn">
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+
+    var caiPu = ["土豆", "红薯", "大豆", "牛肉", "鱼肉"];
+    //点击按钮动态的创建列表，把列表加到div中
+    my$("btn").onclick = function () {
+//创建ul，把ul立刻加入到父级元素div中
+        var ulObj = document.createElement("ul");
+        my$("dv").appendChild(ulObj);
+        //动态的创建li，加到ul中
+        for (var i = 0; i < caiPu.length; i++) {
+            var liObj = document.createElement("li");
+            //设置li中间    的文字内容
+            liObj.innerHTML = caiPu[i];
+            ulObj.appendChild(liObj);
+            //鼠标进入---之前的匿名函数效果低
+            liObj.onmouseover = mouseoverHandle;
+            //鼠标离开
+            liObj.onmouseout = mouseoutHandle;
+            function mouseoverHandle() {
+                this.style.backgroundColor = "yellow";
+            }
+
+            function mouseoutHandle() {
+                this.style.backgroundColor = "";
+            }
+            //如果是循环方式添加事件，推荐命名函数，如果不是循环的方式添加事件，推荐用匿名函数
+        }
+    };
+</script>
+
+</body>
+</html>

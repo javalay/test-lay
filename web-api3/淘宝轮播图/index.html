@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #box {
+            width: 520px;
+            height: 280px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .xiaodian {
+            width: 80px;
+            height: 15px;
+            line-height: 15px;
+            border-radius: 10px;
+            background-color: #dce2e2;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -40px;
+        }
+
+        .xiaodian li {
+            float: left;
+        }
+
+        .xiaodian li a {
+            display: inline-block;
+            text-align: center;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: #b7b7b7;
+            margin: 0 3px;
+        }
+
+        #box span {
+            position: absolute;
+            width: 520px;
+            height: 280px;
+        }
+
+        span {
+            display: none;
+        }
+
+        .xs {
+            display: block;
+        }
+
+        #box .xiaodian .bj {
+            background-color: #ff4400;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span class="xs"><img src="image/01.jpg"></span>
+    <span><img src="image/02.jpg"></span>
+    <span><img src="image/03.jpg"></span>
+    <span><img src="image/04.jpg"></span>
+    <span><img src="image/05.jpg"></span>
+    <div class="xiaodian">
+        <ul>
+            <li><a href="#" class="bj"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+</script>
+<script>
+    var box = $("box"),
+            spans = box.getElementsByTagName("span"),
+            lis = box.getElementsByTagName("a");
+    for(var i=0;i<lis.length;i++){
+        console.log(i);
+        lis[i].index=i;//添加计数index
+        lis[i].onmousemove=function () {
+            console.log(this.index);
+            //每一次鼠标进入的时候 都去除内样式
+            for(var i=0;i<lis.length;i++){
+                lis[i].className="";
+                spans[i].className="";
+            }
+            //去除内样式之后 添加显示的内样式
+            this.className="bj";
+            spans[this.index].className="xs";
+        }
+    }
+</script>
+</body>
+</html>
