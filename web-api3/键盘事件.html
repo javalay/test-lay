@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <!-- //键盘事件 
+    keydown 键盘按下的时候
+    keyup 键盘弹起的时候
+    keydown和keyup的区别 keydown的时候外面所按的减还没有落入文本框
+    keyup键盘弹起的时候按的键已经落入文本框 -->
+    <script>
+        var txt = document.getElementById("txt");
+        txt.onkeydown = function (e) {
+            //判断当前用户按下的减是否是数字
+            // 按下后退键 8 删除一个字符
+            console.log(e.keyCode);
+
+            // if (e.keCode < 48 || e.keyCode > 57 && e.keyCode !== 8) {
+            //     // e.preventDefault();
+            //     return false
+            // }
+             if (e.keCode < 48 || e.keyCode > 57) {
+            // e.preventDefault();
+            if (keyCode !== 8) {
+                return false;
+            }
+        }
+        }
+       
+    </script>
+
+</body>
+
+</html>

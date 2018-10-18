@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        height: 3000px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        //卷曲出去的距离  封装函数的方法
+        function getScroll(){
+            var getScrollTop=document.documentElement.scrollTop||document.body.scrollTop,
+            getScrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
+            return {
+                "top":screenTop,
+                "left":screenLeft
+            }
+        }
+        document.onclick=function(e){
+            console.log(getPage(e).pageX);
+            console.log(getPage(e).pageY);
+        }
+        //获取page 兼容性问题
+    function getPage(e){
+        var pageX=e.pageX||e.clientX+getScroll().getScrollLeft;
+        var pageY=e.pageY||e.clientX+getScroll().getScrollTop;
+        return {
+            "pageX": pageX,
+            "pageY": pageY
+        }
+    }    
+    </script>
+</body>
+</html>
