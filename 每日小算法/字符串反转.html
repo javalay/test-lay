@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+         var str1 = 'hello';
+        function reverseString(str) {
+            return str.split('').reverse().join('');//切割字符串转换成数组，反转数组，转换成字符串
+        }
+        console.log(reverseString(str1));
+   
+
+
+        
+        // var str1 = 'hello';
+        // function reverseString(str) {        //创建一个空组，遍历字符放进数组，将数组反转，再将数组转换成字符串，返回
+        //     arr = [];
+        //     for(var i=0; i<str.length; i++){
+        //         arr.push(str[i]);
+        //     }
+        //     arr.reverse();
+        //     arr = arr.join('');
+        //     return arr;
+        // }
+        // console.log(reverseString(str1));
+        
+
+
+
+
+        // var str1 = 'hello';
+        // function reverseString(str) {
+        //     strNew = '';                         //创建一个新字符，接收倒叙遍历字符串，返回字符串（缺点：字符串拼接浪费空间）
+        //     for(var i=str.length-1; i>=0; i--){
+        //         strNew += str[i];
+        //     }
+        //     return strNew;
+        // }
+        // console.log(reverseString(str1));
+        
+       
+        
+        
+        
+    </script>
+</body>
+</html>
