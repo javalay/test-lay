@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv{width: 200px;height: 200px;background-color: green;}
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<div id="dv"></div>
+<script src="../common.js"></script>
+<script>
+    //点击按钮改变背景颜色
+    //面向过程编程思想
+//    my$("btn").onclick=function () {
+//        my$("dv").style.backgroundColor="yellow";
+//    };
+    //面向对象思想---初级
+    //按钮是一个对象，div 是一个对象，颜色是一个属性
+//    function  ChangStyle(btnId,dvId,color) {
+//        this.btnObj=my$(btnId);//按钮对象
+//        this.dvObj=my$(dvId);//div对象
+//        this.color=color;//颜色
+//    }
+    //通过原型添加方法,解决数据共享，节省内存空间
+//    ChangStyle.prototype.init=function () {
+//        console.log(this);//实例对象--就是当前对象 也就是cs
+//        var that=this;
+//        //点击按钮，改变div的背景颜色
+//        this.btnObj.onclick=function () {
+//            //this 这里指的是this.btnObj
+//            that.dvObj.style.backgroundColor=that.color;
+//        }
+//    };
+//    var cs=new  ChangStyle("btn","dv","y ellow");
+//    cs.init();
+
+    //面向对象高级思想---》
+    function  ChangStyle(btnObj,dvObj,json) {
+        this.btnObj=btnObj;
+        this.dvObj=dvObj;
+        this.json=json;
+    }
+    //通过原型添加方法,解决数据共享，节省内存空间
+    ChangStyle.prototype.init=function () {
+        //点击按钮改变div多个样式属性值
+        var that=this;
+        this.btnObj.onclick=function () {//按钮的点击事件
+            for (var key in that.json){//循环遍历json中的数据，并赋值给dv
+                that.dvObj.style[key]=that.json[key];
+            }
+        };
+    };
+    //实例化对象
+    var json={"width":"500px","height":"800px","backgroundColor":"blue","opacity":"0.2"};
+    var cs=new ChangStyle(my$("btn"),my$("dv"),json);
+    cs.init();
+</script>
+</body>
+</html>

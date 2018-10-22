@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+//为内置对象添加原型方法
+//    var arr=new Array(10,20,30,40,50);
+//    arr.join("|");
+//    console.log(arr);
+//
+//    var str=new String("哦，买嘎的");
+//    str.indexOf("哦");
+//    console.dir(str);
+//
+//    var dt=new Date();
+//    dt.getFullYear();
+//    console.log(dt);
+
+    //实例中的方法如果没有，去创建和实例对象的构造函数的原型对象中找
+    //在系统的对象的原型中添加方法，相当于在改变源码
+    //我希望字符串中有一个倒序字符串的方法
+    String.prototype.myReverse=function () {
+        for(var i=this.length-1;i>=0;i--){
+            console.log(this[i]);
+        }
+    };
+    var str="asdfghj";
+    str.myReverse();
+
+    String.prototype.sayHi=function () {
+        console.log(this+"哈哈，我又变帅了");
+    };
+    var str2="小东";
+    str2.sayHi();
+</script>
+</body>
+</html>

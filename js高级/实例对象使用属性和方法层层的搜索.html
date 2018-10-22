@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    function Person(age,sex) {
+        this.age=age;
+        this.sex=sex;
+        this.eat=function () {
+            console.log("构造函数中的吃")
+        }
+    }
+    Person.prototype.sex="女";
+    Person.prototype.eat=function () {
+        console.log("原型对象中的吃");
+    };
+    var per=new Person(20,"男");
+    console.log(per.sex);
+    per.eat();
+    console.dir(per);
+    //实例对象使用的属性或者方法，先在实例对象中查找，找到了则直接使用，找不到则，
+    // 去实例对象的__peoto__指向的原型对象prototype中找，找到了则使用，找不到则报错
+</script>
+
+</body>
+</html>

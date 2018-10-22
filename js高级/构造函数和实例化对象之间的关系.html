@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    //面向对象的思想是 --- 抽象的过程--- 实例化的过程
+    //自定义构造函数--》实例化对象
+function Person(name,age,sex) {
+    this.name=name;
+    this.age=age;
+    this.sex=sex;
+    this.eat=function () {
+        console.log("正在吃饭");
+    };
+}
+    //构造函数--创建对象
+    var per =new Person();
+    per.eat();
+    //实例对象会指向自己的构造函数（暂时理解，是错误的）；
+    console.dir(per);//把这个对象的构造显示出来
+    console.log(Person);
+//实例对象的构造器（构造函数）
+    //实例对象的构造器是指向Person的，结果是true，所以这个实例对象per就是通过Person来创建的
+    console.log(per.constructor==Person);//true
+    console.log(per.__proto__.constructor==Person);//true
+    console.log(per.__proto__.constructor==Person.prototype.constructor);//true
+</script>
+
+</body>
+</html>

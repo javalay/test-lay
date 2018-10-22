@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    //工厂模式
+    function createObjct(name,age) {
+        var obj=new Object;
+        obj.name=name;
+        obj.age=age;
+        obj.sayHi=function () {
+            console.log("你好");
+        };
+        return obj;
+    }
+    //自定义构造函数1
+    function  Person(name,age) {
+        thi s.name = name;
+        thia.age = age;
+        thia.sayHi = function () {
+            console.log("您好");
+        };
+    }
+</script>
+
+</body>
+</html>

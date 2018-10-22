@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    //什么样子的数据是需要写在原型中？
+    //需要共享的数据就可以写原型中
+    //原型的作用之一：数据共享
+    //属性需要共享：方法也需要共享，
+    //不需要共享的数据写在构造函数中，需要共享的数据写在原型中
+    //构造函数
+    function  Student(name,age,sex) {
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+    }
+    //所有的身高都是188.体重都是55
+    //所有的学生 每天都要写500行d代码/
+    //所有学生都每天都要吃一个10斤西瓜
+    //原型对象
+//    Student.prototype.height="188";
+//    Student.prototype.weight="55kg";
+//    Student.prototype.study=function () {
+//        console.log("学习，"+this.name+"写500行代码")
+//    };
+//    Student.prototype.eat=function () {
+//        console.log(this.name+"吃一个10斤的西瓜")
+//    };
+
+    //简单原型写法
+    Student.prototype={
+        //手动修改构造器的指向
+        constructor:Student,
+        height:"188",
+        weight:"55kg",
+        study:function () {
+            console.log(this.name+"学习好开心");
+        },
+        eat:function () {
+            console.log(this.sex+"我要吃好吃的");
+        }
+    };
+    //实例化对象，并初始化
+var stu1=new Student("段飞",20,"男");
+    stu1.eat();
+    stu1.study();
+    console.dir(Student);
+    console.dir(stu1);
+    //实例化对象，并初始化
+    var stu=new Student("李嘉存",58,"男");
+    console.dir(Student);
+    console.log(stu);
+    stu.study();
+    stu.eat();
+</script>
+
+</body>
+</html>

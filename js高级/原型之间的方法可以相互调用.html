@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    //创建构造函数
+    function  Anim(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    //原型中添加方法
+    Anim.prototype.play=function () {
+        console.log("玩球球");
+        this.sleep();
+    };
+    Anim.prototype.sleep=function () {
+        console.log("想睡觉了");
+        this.eat();
+    };
+    Anim.prototype.eat=function () {
+        console.log("吃肯德基");
+    };
+    //实例对象，初始化
+    var dog=new Anim("小米",20);
+    dog.play();
+</script>
+</body>
+</html>

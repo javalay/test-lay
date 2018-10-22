@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    //函数的自调用--自调用函数
+    //一次性的函数--声明的同时，直接调用
+    //(function (形参) {
+    //    console.log("函数的自调用");
+    //})();
+    //(function (实参) {
+    //    var num=10;
+    //})();
+    //console.log(num);//会报错
+
+    (function (win) {
+        var num=10;//局部变量
+        //js 是一门动态类型的语言,对象没有属性,点了就没有了
+        win.num=num;
+    })(window);
+    console.log(num);
+</script>
+</body>
+</html>

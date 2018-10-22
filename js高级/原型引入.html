@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../common.js"></script>
+<script>
+    function myEat() {
+        console.log("吃发肘子");
+    }
+//    var myEat=10; //会存在重名的问题
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+        this.eat=myEat;
+    }
+    var per1=new Person("小白",20);
+    var per2=new Person("小红",10);
+    console.dir(per1);
+    console.dir(per2);
+
+    console.log(per1.eat===per2.eat);//他们俩的方法都指向同一个地址 所以是true
+    for(var i=0;i<10;i++){
+        var per=new Person("嘎嘎",20);
+        per.eat();
+        console.log(per.name)
+    }
+</script>
+</body>
+</html>
