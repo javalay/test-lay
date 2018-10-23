@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+            z-index: 1000;
+
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all" id="box">
+        <div class="screen">
+            <ul>
+                <li><img src="images/wf1.jpg" width="500" height="200"></li>
+                <li><img src="images/wf2.jpg" width="500" height="200"></li>
+                <li><img src="images/wf3.jpg" width="500" height="200"></li>
+                <li><img src="images/wf4.jpg" width="500" height="200"></li>
+                <li><img src="images/wf5.jpg" width="500" height="200"></li>
+            </ul>
+            <ol></ol>
+        </div>
+        <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+    </div>
+    <script src="common.js"></script>
+    <script src="animate.js"></script>
+    <script>
+        //获取元素
+        var box = my$("box"),
+            screen = box.children[0],//能够显示图片的div
+            ul = screen.children[0],//存放图片的盒子
+            ol = screen.children[1];//存放下面索引的盒子
+        //箭头 arrow
+        var arr = my$("arr"),//图片中的按钮的大盒子
+            arrLeft = my$("left"),//左按钮
+            arrRight = my$("right");//右按钮
+        //图片的宽度--可以显示图片的盒子的宽度
+        var imgWidth = screen.offsetWidth;
+
+
+        //1，动态生成序列号
+        //count是记录的多少张图片，这里没有克隆的li
+        var count = ul.children.length;
+        //循环遍历可以生成多少个序号
+        for(var i=0;i<count;i++){
+            // 创建li标签
+            var li=document.createElement("li");
+            //把li标签添加到ol中去
+            ol.appendChild(li);
+            //在里标签中添加数字
+            setInnerText(li,i+1);
+            //给每一个li添加点击事件---这里的liclick后面不能添加括号
+            li.onclick=liclick;
+        //给li添加自定义属性，后期会有用 标识的作用
+            li.setAttribute("index",i);
+        }
+        //给li封装的点击事件函数
+        function liclick(){
+            //循环遍历每一个li
+            for(var i=0;i<ol.children.length;i++){
+                //把每一个ol的子元素（也就是li）li赋值给li
+                var li=ol.children[i];
+                //清空类样式
+                li.className="";
+            }
+            //this指所点击的对象。0---添加current类样式
+            this.className="current";
+            //获取当前自定义添加属性的 值index 并赋值给liIndex
+            var liIndex=parseInt(this.getAttribute("index"));
+            //调用animate文件中的animate 方法，动画移动
+            animate(ul,-liIndex*imgWidth);
+            //全局遍历index和li中的index保存一致
+            index=liIndex;
+        }
+        //初始化 --- 让序号1高亮显示
+        ol.children[0].className="current";
+        box.onmouseenter=function(){
+            //手表放到盒子显示箭头
+            arr.style.display="block";
+        }
+        //鼠标离开盒子箭头隐藏
+        box.onmouseleave=function(){
+            arr.style.display="none";
+        }
+        // / 4 实现上一张和下一张的功能
+        // 下一张
+        var index=0; //第一张图片的索引
+        arrRight.onclick=function(){
+            //判断是否克隆的第一张图片，如果是克隆的第一张图片，此时修改ul的坐标，显示真正的第一张图片
+            if(index===count){
+                ul.style.left="0px";
+                index=0;//这时候index就取值为0
+            }
+            index++;//自加--为 1  满足下一个条件，就执行下一个语句
+            if(index<count){//相当与执行ol第index子元素的点击事件
+        // 获取图片对应的序号，让序号点击
+                ol.children[index].click();
+            }else{//不符合上面的判断条件，就执行下面的语句
+                animate(ul,-index*imgWidth);//往右边走都是负数如果是最后一张图片，以动画的方式，移动到克隆的第一张图片
+                //循环遍历-并清空li类样式
+                for(var i=0;i<ol.children.length;i++){
+                    li.className="";
+                }
+                //添加第一个类样式
+                ol.children[0].className="current";
+            }
+        }
+        //左键的点击事件
+        arrLeft.onclick=function(){
+            //判断index是否等于0
+            if(index===0){
+                // 如果当前是第一张图片，此时要偷偷的切换到最后一张图片的位置（克隆的第一张图片）
+                index=count;
+                ul.style.left=-index*imgWidth+"px";
+            }
+            // 每一次i-- ,然后相当于执行index的点击事件
+            index--;
+            ol.children[index].click();
+        }
+         // 无缝滚动
+
+         // 获取ul中的第一个li
+        var firstLi=ul.children[0];
+        // 克隆li  cloneNode()  复制节点  
+        // 参数  true  复制节点中的内容
+        //       false  只复制当前节点，不复制里面的内容
+        var cloneLi=firstLi.cloneNode(true);
+        ul.appendChild(cloneLi);//把克隆后的元素添加到ul中去
+    </script>
+</body>
+</html>
