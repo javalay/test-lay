@@ -24,7 +24,7 @@ Food.prototype.rander=function(map){
     //给div添加一些style的属性
     div.style.position=position;
     div.style.left=this.x+"px";
-    div.style.top=this.y+"px";
+    div.style.top=this.y+"px"; 
     div.style.width=this.width+"px";
     div.style.height=this.height+"px";
     div.style.backgroundColor=this.color;

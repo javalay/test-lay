@@ -18,11 +18,11 @@
         // 2.4  当蛇遇到食物  
     }
     //私有函数， 让蛇移动
-    function runSnake() {
+    function runSnake() { 
         var timeId = setInterval(function () {
             //这里的this指的是window
             // console.log(this);
-            that.snake.remove(that.food);
+            that.snake.remove(that.food,that.map);
             that.snake.rander();
             //当蛇遇到边界游戏结束
             //获取蛇头的坐标
@@ -40,7 +40,6 @@
             }
         }, 90);
     }
-
     function binKey() {
         //左37 上38 下40 右39  判断点击的是哪个键盘
         document.addEventListener("keydown", function (e) {

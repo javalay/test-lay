@@ -29,12 +29,14 @@
     }
     var elements = [];
     Snake.prototype.rander = function () {
-        //删除数组中的元素，从最后一个开始删除
+        //删除数组中的元素，从最后一个开始删除 
+        console.log(1);
+        
         for (var i = elements.length - 1; i >= 0; i--) {
             elements[i].parentNode.removeChild(elements[i]);
             elements.splice(i, 1); //这一步是操作数组
+            console.log(2);
         }
-        console.log(1);
         //把每一个蛇节渲染到地图上  循环body里面有多少个蛇节
         for (var i = 0, len = this.body.length; i < len; i++) {
             //蛇节--把每一个蛇节赋值给object
@@ -50,7 +52,7 @@
             div.style.position = position; //脱离文档流
         }
     }
-    Snake.prototype.remove = function (food) {
+    Snake.prototype.remove = function (food,map) {
         //控制蛇的身体移动，（当前蛇节 到上一个蛇节的位置）
         for (var i = this.body.length - 1; i > 0; i--) { //这是从最后一个div开始的，循环蛇身体中的每一个身体
             this.body[i].x = this.body[i - 1].x; //当前的body的x 赋值给前前的x
@@ -62,7 +64,7 @@
         switch (this.direction) {
             case "right":
                 head.x += 1;
-                break;
+                break; 
             case "left":
                 head.x -= 1;
                 break;
@@ -73,6 +75,9 @@
                 head.y += 1;
                 break;
         }
+        //判断蛇头是否和食物坐标重合
+        headX = that.snake.body[0].x, //获取蛇头的x轴坐标
+        headY = that.snake.body[0].y; //获取蛇头的y轴坐标
         var headX = headX * this.width;
         var headY = headY * this.height;
         if (headX === food.x && headY === food.y) {
@@ -85,7 +90,7 @@
                 color: last.color
             });
             // 随机在地图上重新生成食物
-            food.render();
+            food.rander();
         }
     }
     //暴露构造函数 给外部 就可以访问了

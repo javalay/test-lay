@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //输入a=2,b=4 输出a=4,b=2
+        //用a,b进行置换，利用+ - 进行运算，例如a= a+ (b - a)等同于a = b;
+        var num1 = 2,
+            num2 = 4;
+
+        function exchange(a, b) {
+            b = b - a;
+            a = a + b;
+            b = a - b;
+            return [a, b];
+        }
+        console.log(exchange(2, 4));
+    </script>
+</body>
+</html>

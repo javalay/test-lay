@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一个字符串的首字母大写，打印出来
+        str = "we are young aaa";
+        function getS(st) {
+            var st = str.toLowerCase().split(" "); //先将字符串转换为小写，并分割数组，这里是空格不是空
+            var arr = [];
+            for (var i = 0; i < st.length; i++) {
+                console.log(i);
+                //replace 原来替换字符串
+                arr.push(st[i].replace(st[i][0], st[i][0].toUpperCase()));
+            }
+            return arr.join(" ");
+        }
+        console.log(getS(str));
+
+
+        var str = 'When the whole world is about to rain, let’s make it clear in our heart together.';
+
+        function titleCase(str) {
+            // 将字符串转换为小写，并分割数组 注意，这里是空格，不是空
+            var strArr = str.toLowerCase().split(' ');
+            console.log(strArr);
+            // 对数组进行遍历
+            for (var i = 0; i < strArr.length; i++) {
+                // strArr[i][0] 就是每个单词的首字母，将其大写
+                // strArr[i].slice(1) 方法从字符串的第 1 位开始，截取到字符串的最后一位
+                strArr[i] = strArr[i][0].toUpperCase() + strArr[i].slice(1);
+            }
+            // 将处理好的数组重新拼接成字符串
+            return strArr.join(' ');
+        }
+        var result = titleCase(str);
+        console.log(result);
+    </script>
+</body>
+
+</html>
