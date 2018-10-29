@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //先定义一个数组
+        var arr = [1, 3, 5, 6, 7, 4, 3, 21, 14];
+        // 给Array添加原型对象
+        Array.prototype.mySort = function (fn) {
+            //循环排序
+            for (var i = 0; i < this.length - 1; i++) {
+                var flag = true;//给定初始值为true 的判定循环是否结束的条件
+                for (var j = 0; j < this.length - i - 1; j++) {
+                    if (fn(this[j], this[j + 1]) > 0) {
+                        flag = false;//判断条件为false 时 说明判断还没有结束
+                        var temp = this[j];
+                        this[j] = this[j + 1];
+                        this[j + 1] = temp;
+                    }
+                }
+                if (flag) {// 优化代码，循环判断是否结束
+                    break;
+                }
+            }
+        }
+       arr.mySort(function fn(a, b) {
+            return a - b;
+        });
+        console.log(arr);
+    </script>
+</body>
+
+</html>
