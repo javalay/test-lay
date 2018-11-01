@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    div{
+      width: 600px;
+      height: 450px;
+      border: 1px solid red;
+    }
+  </style>
+  <script src="jquery-1.12.1.js"></script>
+  <script>
+    //案例:点击按钮在div中创建一个表格
+    //表格数据的数组
+    var arr=[
+      {"name":"传智播客","href":"http://www.itcast.cn"},
+      {"name":"快播","href":"http://www.kuaibo.cn"},
+      {"name":"优酷","href":"http://www.youku.cn"},
+      {"name":"爱奇艺","href":"http://www.iqiyi.cn"},
+      {"name":"B站","href":"http://www.bili.cn"},
+      {"name":"土豆","href":"http://www.tudou.cn"}
+    ];
+    //页面加载事件
+    $(function (){
+      //点击按钮创建表格
+      $("#btn").click(function (){
+        //创建表格
+        var table=$("<table style='cursor:pointer' border='1' cellspacing='0' cellpadding='0'></table>");
+        //把表格加入到div中
+        $("#dv").append(table);
+        //循环遍历数组，创建行
+        for(var i=0;i<arr.length;i++){
+          var dt=arr[i];//没个数组元素，都是对象
+          //创建行，并加入到table中
+          var tr=$("<tr></tr>");
+          table.append(tr);
+          //在列中显示内容，列在行中
+          ///创建行，并加入到table中
+          var td1=$("<td>"+dt.name+"</td>");
+          //第一个列加入到tr中
+          tr.append(td1);
+          var td2=$("<td><a href='"+dt.href+"'>"+dt.name+"</a></td>");
+          //把第二列加入到tr中
+          tr.append(td2);
+          //鼠标进入到每一行的时候，该行有高度显示的效果
+          tr.mouseenter(function (){
+            $(this).css("backgroundColor","green");
+          }).mouseleave(function (){
+            $(this).css("backgroundColor","");
+          });
+        }
+      });
+      //点击按钮移除表格
+      $("#btn2").click(function (){
+        //当前这个按钮的下一个兄弟元素，清空里面的子元素
+        // $(this).next().empty();
+        //所有div中的第一个div
+        $("#dv").children("table").remove();
+      });
+      //点击按钮，在table中添加一行
+      $("#btn3").click(function (){
+        //创建一行
+        var tr=$("<tr><td>腾讯</td><td><a href='http://www.qq.com'>腾讯</a></td></tr>");
+        //把这一行加入到table中
+        $("#dv").children("table").append(tr);
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="button" value="创建一个表格" id="btn" />
+  <input type="button" value="移除表格" id="btn2" />
+  <input type="button" value="添加一行" id="btn3" />
+  <div id="dv"></div>
+</body>
+</html>
