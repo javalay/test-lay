@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- .lazy 惰性更新（用户输入的过程中不去打扰） .trim 去掉用户前后所输入的空格 .number 自动识别数字类型 鼠标在其他地方点击的时候才会更新-->
+        <input type="text" v-model="name" placeholder="请输入你的姓名">
+        <span v-show="name">你的姓名是：{{ name }}</span>
+        <textarea v-model="artil"></textarea>
+        <br>
+        <span>你来之哪里</span>
+        <select v-model="from">
+            <option value="1">外交官</option>
+            <option value="2">新加坡</option>
+            <option value="3">习近平</option>
+        </select>
+        {{ from }}
+        <br>
+        <span>你去哪里</span>
+        <!-- /multiple select多选的属性 -->
+        <select v-model="dest" multiple>
+            <option value="1">外交官</option>
+            <option value="2">新加坡</option>
+            <option value="3">习近平</option>
+        </select>
+        {{ dest }}
+        <br>
+        <label>
+            <!-- //点选的是：radio -->
+            男<input v-model="checkbox" value="male" type="checkbox">
+        </label>
+        <label>
+            女<input v-model="checkbox" value="female" type="checkbox">
+        </label>
+        <br>
+        {{ checkbox }}
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                name: "往花花",
+                price: 10,
+                //单选按钮
+                // sex:"female",
+                checkbox: [],
+                artil:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, asperiores sit velit reiciendis quam, nulla ipsum laboriosam reprehenderit, dolorem sequi repellendus! Blanditiis nam exercitationem pariatur obcaecati ipsa harum veniam vitae.',
+                from:null,
+                dest:[]
+            }
+        });
+    </script>
+</body>
+
+</html>
