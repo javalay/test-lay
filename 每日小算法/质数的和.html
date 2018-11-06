@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //求小于等于给定数值的质数之和
+    //  2 3 5 7 11 13 17 19 23 29...
+    function sumPrimes(num) {
+      var temp = 0,//记录次数
+        sum = 0;//总和
+        //循环自身的数开始
+      for (var i = num; i > 0; i--) {
+        //循环拿i除以j 
+        for (var j = 1; j <= num; j++) {
+          //如果能被自身 和1  整除，记录次数就加一 如果自加两次就满足下面的条件
+          if (i%j == 0) { 
+            temp++;
+          }
+        }
+        if (temp == 2) {//满足这个条件，说明被整除两次，i是个质数
+          sum += i;//质数和的累加
+        }
+        temp = 0;//记录次数 恢复原始
+      }
+      return sum;
+    }
+    sumPrimes(11);
+  </script>
+</body>
+</html>
