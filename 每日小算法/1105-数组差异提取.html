@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function diff(arr1, arr2) {
+            var newArr = [];
+            //将arr1和arr2合并为arr3
+            var arr3 = arr1.concat(arr2);
+            function isContain(value) {
+                //找出arr3中不存在于arr1和arr2中的元素
+                return arr1.indexOf(value) == -1 || arr2.indexOf(value) == -1;
+            }
+            newArr = arr3.filter(isContain);
+            return newArr;
+        }
+        console.log(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+    </script>
+</body>
+
+</html>

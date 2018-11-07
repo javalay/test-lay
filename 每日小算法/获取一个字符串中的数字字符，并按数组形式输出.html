@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //给定一个字符串
+        var str = "zxcv136asdfg347wer877gh50f";
+        //定义一个findNum 函数
+        function findNum(str) {
+            //定义一个空数组
+            var arr = [];
+            // 定义一个空字符串
+            var result = "";
+            //for循环遍历str字符串
+            for (var i = 0; i < str.length; i++) {
+                //判断循环用charAt()的方法获取到每一个子字符串，判断他是不是在0~9之间，是就把他放到到准备好的数组里
+                if (str.charAt(i) <= '9' && str.charAt(i) >= '0') {
+                    result += str.charAt(i); //注意添加方向不要反了
+                    //每次碰到是数字走if，碰到字符走else，走else的时候把之前那些数字存放到新的空的字符串里，然后通过push添加到数组，然后清空字符串
+                } else {
+                    if (result) {
+                        arr.push(result);
+                        result = "";
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(findNum(str));
+
+        var att=str.match(/\d+/g);
+        console.log(att);
+        
+    </script>
+</body>
+
+</html>
