@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="search">
+        <input type="search" id="userName">
+        <button type="submit">搜索GitHub用户</button>
+    </form>
+    <div id="result">
+
+    </div>
+    <script src="../jQuery.js"></script>
+    <script>
+        var form = $("#search"),
+            input = $("#userName"),
+            result = $("#result"),
+            userName;
+        //这里需要处理浏览器默认事件
+        form.on('submit', function (e) {
+            e.preventDefault();
+            userName=input.val();
+            $.ajax('https://api.github.com/users/'+userName)
+                //请求异步。当他结束的时候 调用done方法
+                .done(function (data) {
+                    // console.log("data:", data);
+                    //把或许的用户信息显示出来
+                    var html=
+                    '<div>用户名：'+data.login+'</div>'+
+                    '<div>介绍：'+(data.bio||"无")+'</div>';
+                    result.html(html);//把定义好的标签添加到result中去
+                });
+        })
+        // $.ajax('https://api.github.com/users/javalay')
+        // //请求异步。当他结束的时候 调用done方法
+        // .done(function(data){
+        //     console.log("data:",data);
+        // });
+    </script>
+</body>
+
+</html>

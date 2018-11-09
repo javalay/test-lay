@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jQuery.js"></script>
+    <script>
+    $.post('url',{
+        username:'...',
+        password:'...'
+    });
+    $.get('url');
+    $.getJSON('url');//获取数据--返回的是json
+    $.getScript('url');//获取代码
+
+    $.ajax({
+        url:'https://api.github.com/users/javalay',
+        method:'get',
+        data:{
+            username:'whh',
+            password:'...'
+        },
+        //请求成功后的操作
+        success:function(){
+            console.log("成功");
+        },
+        //请求失败的操作
+        error:function(){
+            console.log("失败");
+        }
+    })
+    </script>
+</body> 
+</html>

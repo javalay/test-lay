@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="trigger">协议</button>
+    <div style="display:none" id="card">
+    </div>
+    <script src="../jQuery.js"></script>
+    <script>
+        var trigger = $("#trigger"), //选中页面中的按钮
+            card = $("#card"); //选中页面中的卡片
+        var loaded = false; //记录是否发送这个异步请求的状态
+        //监听事件
+        trigger.on('mouseenter', function () {
+            // if(card.is(':visible')){
+            //     card.hide();
+            // }
+            // card.toggle();//没有就显示。有就隐藏
+            // XHR异步请求
+            if (card.is(":visible")) { //如果这个card是显示的 就直接隐藏
+                card.slideUp();
+            } else { //如果是不可见的就进行下面的if判断
+                if (!loaded) { //对上面的异步请求判断是否加载并且异步请求
+                    card.load("card.html").toggle(); //异步请求
+                    loaded = true;
+                }
+                card.slideDown();//如果隐藏就显示
+            }
+
+        }).on("mouseleave",function(){//鼠标离开事件
+            card.slideUp();
+        })
+        
+    </script>
+</body>
+
+</html>
