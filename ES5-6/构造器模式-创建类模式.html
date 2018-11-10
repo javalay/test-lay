@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //这是ES5 方法 -->
+        <script>
+                function Sstudent(name, gender, score) {
+                  this.name = name;
+                  this.gender = gender;
+                  this.score = score;
+                  this.quality = 100;
+              
+                  this.sumScore = function () {
+                    return this.score + this.quality;
+                  }
+                }
+                var whh = new Sstudent('王花花', '男', 89);
+                var lsd = new Sstudent('李拴蛋', '女', 40);
+              
+                console.log(whh.name, whh.sumScore())
+                console.log(lsd.name, lsd.sumScore())
+              </script>
+
+              <!-- 这是ES6 的写法 -->
+
+              <script>
+                  console.log("===========================");
+                  
+                    class Student {
+                      constructor(name, gender, score) {
+                        this.name = name;
+                        this.gender = gender;
+                        this.score = score;
+                        this.quality = 100;
+                      }
+                  
+                      sumScore() {
+                        return this.score + this.quality;
+                      }
+                    }
+                  
+                    var whh = new Student('王花花', '男', 89);
+                    var lsd = new Student('李拴蛋', '女', 40);
+                  
+                    whh.score = 100;
+                    console.log(whh.name, whh.sumScore())
+                    console.log(lsd.name, lsd.sumScore())
+                  </script>
+</body>
+</html>
