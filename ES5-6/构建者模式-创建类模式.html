@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 原型化 -->
+    <script>
+        //记录学生， 初始值
+    var studentCount=0;
+     function Student(){
+     }
+     function StudentBuilder(){
+         this.student=new Student();
+     }
+     StudentBuilder.prototype.setName=function (name){
+         this.student.name=name;
+     }
+     StudentBuilder.prototype.setGender=function (gender){
+         //如果满足下面的条件就赋值-不满足就会报错
+         if(gender!="男"&&gender!="女"){
+             throw'一点都不好玩';
+         }
+         this.student.gender=gender;
+     }
+    StudentBuilder.prototype.setHairLength=function(setHaiLength){
+        if(
+            (this.student.gender=='男'&& setHaiLength>1) ||
+            (this.student.gender=='女'&& setHaiLength>25)
+        )throw"回去剪头i";
+        this.student.setHaiLength=setHaiLength;
+    }
+    StudentBuilder.prototype.build=function (){
+        studentCount++;
+        console.log(studentCount);
+        return this.student;
+    }
+    var builder=new StudentBuilder();
+    builder.setName('王哈哈');
+    builder.setGender("女");
+    builder.setHairLength(20);
+    var lsd=builder.build();
+    console.log(lsd);
+    builder.setName("小强");
+    builder.setGender("男");
+    builder.setHairLength(1);
+    var xq=builder.build();
+    console.log(xq);
+    </script>
+</body>
+</html>

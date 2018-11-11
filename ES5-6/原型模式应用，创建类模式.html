@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="roster"></table>
+    <script>
+        var rootElement = document.getElementById("roster");
+        //创建构造函数
+        function Student(name, gender, score) {
+            this.name = name;
+            this.gender = gender;
+            this.score = score;
+            this.quality = 100;
+            this.mount();
+        }
+        //原型对象中添加方法
+        Student.prototype.sumScore = function () {
+            return this.score + this.quality;
+        }
+        //原型对象中添加方法
+        Student.prototype.mount = function () {
+            var tr = document.createElement("tr");//创建tr元素
+            //在元素中添加td
+            tr.innerHTML =
+                "<td>" + this.name + "</td>" +
+                "<td>" + this.gender + "</td>" +
+                "<td>" + this.score + "</td>" +
+                "<td>" + this.sumScore() + "</td>";
+            rootElement.appendChild(tr);
+        }
+        //调用构造函数
+        var whh = new Student("王花花", '男', 99);
+        var whh = new Student("小强", '男', 919);
+        // whh.mount();
+    </script>
+</body>
+
+</html>
