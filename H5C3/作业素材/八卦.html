@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: auto 0;
+            width: 1000px;
+            height: 1000px;
+            background-color: #87CEEB;
+            position: relative;
+        }
+
+        .yang-yin2 {
+            width: 200px;
+            height: 396px;
+            border: solid black;
+            border-width: 2px 200px 2px 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*添加过渡*/
+            transition: transform 2s;
+            /*设置旋转轴心*/
+            transform-origin: center;
+        }
+
+        .yang-yin2:before {
+            content: " ";
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background-color: black;
+            border: 85px #ffffff solid;
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+        }
+
+        .yang-yin2:after {
+            content: " ";
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background-color: #ffffff;
+            border: 85px black solid;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+        }
+
+        .yang-yin2:hover {
+            /* transform: rotate(0deg); */
+            transform: rotate(360deg);
+        }
+
+        /* @keyframes gun {
+            0%{
+            }
+            100%{
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="yang-yin2"></div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        #mask {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            opacity: 0.6;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            transition: transform .5s;
+        }
+
+        .enter {
+            transform: rotate(-90deg)
+        }
+
+        .leave {
+            transform: rotate(0deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="mask"></div>
+    </div>
+    <script>
+        var mask=document.getElementById("#mask");
+        box.onmouseenter = function (event) {
+            var dir = direction(event, box, box.offsetLeft, box.offsetTop);
+            // alert(dir);
+            switch (dir){
+                case "top":
+                    
+                case "right":
+
+                
+                case "bottom":
+
+                
+                case "left":
+
+                
+            }
+        }
+        // 获取鼠标进入/离开盒子方向 - direction
+        /* params - 参数
+        event：鼠标进入事件对象
+        obj: 当前元素
+        objPageX: 当前元素在页面中的水平坐标
+        objPageY: 当前元素在页面中的纵坐标
+         */
+
+        /* 返回值 - 字符串
+        top：从上方进入
+        left：从左侧进入
+        right：从右侧进入
+        bottom：从下侧进入
+         */
+
+        function direction(event, obj, objPageX, objPageY) {
+            //鼠标页面坐标
+            var pageX = event.pageX;
+            var pageY = event.pageY;
+            //盒子中心位置的坐
+            var centerX = objPageX + box.offsetWidth / 2;
+            var centerY = objPageY + box.offsetHeight / 2;
+            //鼠标相对于盒子中心位置的坐标
+            var objx = pageX - centerX;
+            var objy = pageY - centerY;
+
+            // kFix:对角线斜率  kMouse:鼠标相对于盒子中心斜率
+            var kFix = obj.offsetHeight / obj.offsetWidth;
+            var kMouse = objy / objx;
+            if (kFix >= Math.abs(kMouse)) {
+                return objx >= 0 ? "right" : "left";
+            } else {
+                return objy >= 0 ? "bottom" : "top";
+            }
+        }
+    </script>
+</body>
+
+</html>
