@@ -1,0 +1,258 @@
+// 定义变量
+@baseColor: #e92322;
+//从外到内写
+header {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+//   overflow: hidden;
+  .row {
+    height: 100%;
+    > div:nth-of-type(-n + 3) {
+      //前三个div
+      border-right: 1px solid #ccc;
+      .code {
+        text-align: center;
+        position: relative;
+        display: block;
+        img {
+          display: none;
+          position: absolute;
+          top: 49px;
+          left: 50%;
+          transform: translate(-50%);
+          border: 1px solid #ccc;
+          border-top: 1px solid #ccc;
+        }
+        &:hover img {
+          display: block;
+          z-index: 999;
+        }
+      }
+    }
+    > div:nth-last-of-type(1) > .btn-danger {
+      background-color: #e92322;
+      padding: 3px 15px;
+      border-color: #e92322;
+    }
+    > div:nth-last-of-type(1) .btn-link {
+      color: #333;
+    }
+  }
+}
+// 导航条样式
+.nav {
+  &.navbar {
+    clear: both;
+    margin-bottom: 0;
+  }
+  .navbar-brand {
+    height: 80px; // 因为有一个padding 15px 所以行高就是50px
+    line-height: 50px;
+    // font-size: 40px;
+    > .wjs_icon {
+      font-size: 40px;
+    }
+    > span:first-of-type {
+      color: @baseColor;
+    }
+    > span:last-of-type {
+      color: #333;
+    }
+  } //修改导航项的样式
+  .navbar-nav {
+    //这个找的是直接子元素
+    > li {
+      > a {
+        line-height: 50px;
+        font-size: 16px;
+      }
+      //这里面设置的是第一个li中的a 去掉背景颜色
+      > a:hover,
+      a:focus {
+        color: #777;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+    .active {
+      > a,
+      a:hover,
+      a:focus {
+        background-color: transparent;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-top: 23px;
+  }
+}
+//信息块样式
+.info {
+  padding: 30px;
+  .icon {
+    font-size: 30px;
+  }
+  .row {
+    > div {
+      margin-top: 20px;
+      > a:hover {
+        color: @baseColor;
+      }
+    }
+  }
+}
+.reverse {
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.wjs_icon {
+  font-size: 30px;
+}
+// 产品块
+.product {
+//清除上面元素浮动带来的影响
+  clear: both;
+  background-color: #eee;
+  padding: 20px;
+  .container{
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .nav-tabs{
+      overflow: hidden;
+      >li{
+          border-bottom: 0px;
+          //撑开盒子
+          padding: 0 15px;
+          >a{
+              border: none;
+              line-height: 50px;
+              border-radius: 0;
+          }
+          > a:hover{
+            border-bottom: 3px solid @baseColor;
+          }
+          &.active{
+              //a元素初始化时 鼠标经过时鼠标点击时样式
+              >a,a:hover,a:focus{
+                border: none;
+                border-radius: 0;
+                background-color: #eee;
+                border-bottom: 3px solid @baseColor;
+              }
+          }
+      }
+  }
+
+//   1. 产品块
+.wjs_Pbox.active{
+    background-color: red;
+}
+.wjs_Pbox.active> .p_Left{
+    color: #fff;
+}
+  .wjs_Pbox{
+      height: 150px;
+      margin-top: 20px;
+      background-color: #fff;
+      position: relative;
+    //  
+      .p_Left{
+        font-size: 12px;
+        padding-top: 10px;
+        margin-right: 100px;
+        height: 150px;
+        >p{
+            text-align: center;
+            font-size: 16px;
+        }
+        .row{
+            margin-right: -10px;
+            margin-left: -10px;
+            >div:nth-of-type(add){
+                padding-right: 0px;
+            }
+            //基数的add 三个字母 复数时even 三个字母
+            div:nth-of-type(even){
+                text-align: right;
+            }
+        }
+      }
+      &.active> .p_Left::before{
+        content: "\e915";
+        font-family: "wjs";
+        position: absolute;
+        left: 0;
+        top: -5px;
+        font-size: 25px;
+      }
+      .p_Right{
+        width: 100px;
+        height: 150px;
+        border-left: 1px dashed #ccc;
+        //这里子绝父相
+        position: absolute;
+        right: -5px;
+        top: 0px;
+        text-align: center;
+        padding-top: 30px;
+        .p_tip{
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            >span{
+                cursor: pointer;
+            }
+            >span:first-of-type{
+                color: red;
+                border: 1px solid red;
+            }
+            >span:last-of-type{
+                color: blue;
+                border: 1px solid blue;
+            }
+        }
+        
+        >b{
+            color: @baseColor;
+            font-size: 40px;
+        }
+        >sub{
+            color: @baseColor;
+            bottom: 0;
+        }
+        &::before,&::after{
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #eee;
+            position: absolute;
+            left: -5px;
+        }
+        &::before{
+            top: -5px;
+            box-shadow: 0px -1px 1px #ddd inset; 
+        }
+        &::after{
+            bottom: -5px;
+            box-shadow: 0px -1px 1px #ddd inset; 
+        }
+      }
+      &.active>.p_Right>b{
+        color: #fff;
+    }
+      &.active>.p_Right>sub{
+        color: #fff;
+    }
+      &.active>.p_Right>p{
+        color: #fff;
+    }
+  }
+}

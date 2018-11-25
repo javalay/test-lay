@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/wjs.css">
+    <title>微金所</title>
+    <style>
+        .pcImg {
+        width: 100%;
+        height: 410px;
+        display: block;
+        /*设置背景图片了*/
+        /*设置图片居中显示*/
+        background-position: center center;
+        /*设置背景图片的大小*/
+        background-size: cover;
+    }
+    .mobileImg{
+        width: 100%;
+        display: block;
+    }
+    .mobileImg >img {
+        width: 100%;
+        display: block;
+    }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="./lib/html5shiv/html5shiv.min.js"></script>
+    <script src="./lib/respond/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="container hidden-xs hidden-sm">
+            <!-- container -->
+            <div class="row">
+                <div class="col-md-2">
+                    <a href="javascript:;" class="code">
+                        <span class="wjs_icon_phone"></span>
+                        <span>手机微金所</span>
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                        <img src="images/code.jpg">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <span class="wjs_icon wjs_icon_tel"></span>
+                    <a href="javascript:;">4006-89-4006（服务时间：9:00~21:00） 联系在线客服</a>
+                </div>
+                <div class="col-md-2">
+                    <a href="javascript:;">常见问题</a>&nbsp;&nbsp;
+                    <a href="javascript:;">财富登录</a>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-danger">免费注册</button>
+                    <button type="button" class="btn btn-link">登录</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-default nav">
+        <div class="container">
+            <!-- 在移动端显示的效果  data-toggle 绑定的是id 点谁显示谁的效果 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <!-- /菜单项的三行 -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <!-- 这是字体图标， 一定要添加两个类名 -->
+                    <span class="wjs_icon  wjs_icon_logo"></span>
+                    <span class="wjs_icon  wjs_icon_text"></span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- hidden-sm 隐藏小屏幕 -->
+                <ul class="nav navbar-nav hidden-sm">
+                    <li class="active"><a href="#">我要投资<span class="sr-only">(current)</span></a></li>
+                    <li><a href="javascript:;">我要借贷</a></li>
+                    <li><a href="javascript:;">平台介绍</a></li>
+                    <li><a href="javascript:;">新手专区</a></li>
+                    <li><a href="javascript:;">最新动态</a></li>
+                    <li><a href="javascript:;">微平台</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">个人中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 轮播图 -->
+    <div class="banner">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- 点标记 -->
+            <ol class="carousel-indicators">
+                <!-- data-slide-to : 代表当前li控制的是哪一个索引图 -->
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- 轮播项 -->
+            <div class="carousel-inner" role="listbox">
+                <!-- //每一个item是一个轮播图片 -->
+                <div class="item active">
+                    <a href="javascript:;" class="mobileImg hidden-sm hidden-md hidden-lg">
+                        <img src="images/slide_01_640x340.jpg">
+                    </a>
+                    <a href="javascript:;" class="pcImg hidden-xs" style="background-image: url('images/slide_01_2000x410.jpg')"></a>
+                    </a>
+                    <div class="carousel-caption">
+                        <!-- 图片说明 -->
+                        <span>这是第一张图片</span>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="javascript:;" class="mobileImg hidden-sm hidden-md hidden-lg">
+                        <img src="images/slide_02_640x340.jpg">
+                    </a>
+                    <a href="javascript:;" class="pcImg hidden-xs" style="background-image: url('images/slide_02_2000x410.jpg')">
+                    </a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="javascript:;" class="mobileImg hidden-sm hidden-md hidden-lg">
+                        <img src="images/slide_03_640x340.jpg">
+                    </a>
+                    <a href="javascript:;" class="pcImg hidden-xs" style="background-image: url('images/slide_03_2000x410.jpg')"></a>
+                    </a>
+
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="javascript:;" class="mobileImg hidden-sm hidden-md hidden-lg">
+                        <img src="images/slide_04_640x340.jpg">
+                    </a>
+                    <a href="javascript:;" class="pcImg hidden-xs" style="background-image: url('images/slide_04_2000x410.jpg')">
+                    </a>
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+
+            <!--  两个按钮 上一张 下一张 -->
+            <!-- href="#carousel-example-generic"  控制哪一张 -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- 信息块 -->
+    <div class="info">
+        <div class="container hidden-xs">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="javascript:;">
+                        <div class="media">
+                            <span class="media-left wjs_icon wjs_icon_E900"></span>
+                            <div class="media-body">
+                                <h4 class="media-heading">手机微金所</h4>
+                                <p>为您服务，是我们的指责</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 预约块 -->
+    <div class="reverse hidden-xs">
+        <div class="container">
+            <div class="col-sm-9">
+                <span class="wjs_icon wjs_icon_E906"></span>
+                现在的272人在排队。累计预约交易成功7571次
+                <a href="javascript:;">什么叫预约投标</a>
+                <a href="javascript:;" class="reverse_now">立即预约</a>
+            </div>
+            <div class="col-sm-3">
+                <span class="wjs_icon wjs_icon_E905"></span>
+                <a href="javascript:;">微金所企业宣传片</a>
+            </div>
+        </div>
+    </div>
+    <!-- 产品块 -->
+    <div class="product ">
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">特别推荐</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">微投支</a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">微小宝</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">月月盈</a></li>
+                <li role="presentation"><a href="#five" aria-controls="settings" role="tab" data-toggle="tab">稳月盈</a></li>
+                <li role="presentation"><a href="#six" aria-controls="settings" role="tab" data-toggle="tab">海航通宝</a></li>
+                <li role="presentation"><a href="#event" aria-controls="settings" role="tab" data-toggle="tab">微金宝</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="wjs_Pbox active">
+                                    <div class="p_Left">
+                                        <p>新手体验1002期</p>
+                                        <!-- 在嵌套一个栅格 分成了四份 -->
+                                        <div class="row">
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p_Right">
+                                        <b>8</b>
+                                        <sub>%</sub>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="wjs_Pbox">
+                                    <div class="p_Left">
+                                        <p>新手体验1002期</p>
+                                        <!-- 在嵌套一个栅格 分成了四份 -->
+                                        <div class="row">
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p_Right">
+                                        <div class="p_tip">
+                                            <!--data-toggle="tooltip" 说明当前组件时工具提示 data-placement="top"提示文本的方向 
+                                                type="button" 说明当前工具提示的类型  默认时按钮， 如果不需要可以修改为其他任意元素类型-->
+                                            <!-- 工具提示会默认生成一个div标签，默认的文本显示会换行，应该将div的宽度设置为100%，要对工具进行初始化 -->
+                                            <span data-toggle="tooltip" data-placement="top" title="微金宝">宝</span>
+                                            <span data-toggle="tooltip" data-placement="top" title="北京市">北</span>
+                                        </div>
+                                        <b>8</b>
+                                        <sub>%</sub>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="wjs_Pbox">
+                                    <div class="p_Left">
+                                        <p>新手体验1002期</p>
+                                        <!-- 在嵌套一个栅格 分成了四份 -->
+                                        <div class="row">
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p_Right">
+                                        <b>8</b>
+                                        <sub>%</sub>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="wjs_Pbox">
+                                    <div class="p_Left">
+                                        <p>新手体验1002期</p>
+                                        <!-- 在嵌套一个栅格 分成了四份 -->
+                                        <div class="row">
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                            <div class="col-xs-6 ">
+                                                <p>起投金额(元)</p>
+                                                <p>0.01万</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p_Right">
+                                        <b>8</b>
+                                        <sub>%</sub>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">2</div>
+                <div role="tabpanel" class="tab-pane" id="messages">3</div>
+                <div role="tabpanel" class="tab-pane" id="settings">4</div>
+                <div role="tabpanel" class="tab-pane" id="five">5</div>
+                <div role="tabpanel" class="tab-pane" id="six">6</div>
+                <div role="tabpanel" class="tab-pane" id="event">7</div>
+            </div>
+        </div>
+    </div>
+    <!-- 新闻块 -->
+    <div class="news"></div>
+    <!-- 合作伙伴 -->
+    <div class="partner"></div>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/wjs.js"></script>
+    <script>
+        $(function () {
+            $('.carousel').carousel({
+                interval: 1000
+            })
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+    </script>
+</body>
+
+</html>
