@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/wjs.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <title>微金所</title>
     <style>
         .pcImg {
@@ -34,7 +33,6 @@
     <script src="./lib/respond/respond.js"></script>
     <![endif]-->
 </head>
-
 <body>
     <header>
         <div class="container hidden-xs hidden-sm">
@@ -151,7 +149,6 @@
                     </div>
                 </div>
             </div>
-
             <!--  两个按钮 上一张 下一张 -->
             <!-- href="#carousel-example-generic"  控制哪一张 -->
             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -256,6 +253,7 @@
     <div class="product ">
         <div class="container">
             <!-- Nav tabs -->
+            <div class="tabs_parent">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">特别推荐</a></li>
                 <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">微投支</a></li>
@@ -265,6 +263,7 @@
                 <li role="presentation"><a href="#six" aria-controls="settings" role="tab" data-toggle="tab">海航通宝</a></li>
                 <li role="presentation"><a href="#event" aria-controls="settings" role="tab" data-toggle="tab">微金宝</a></li>
             </ul>
+        </div>
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
@@ -414,20 +413,91 @@
         </div>
     </div>
     <!-- 新闻块 -->
-    <div class="news"></div>
+    <div class="news">
+        <div class="container">
+            <div class="row">
+                <!-- col-md-offset-2 偏移两份后 加起来就是十二份了 -->
+                <div class="col-md-2 col-md-offset-2">
+                    <h3 class="news_title">全部新闻</h3>
+                </div>
+                <div class="col-md-1">
+                    <div class="news_line hidden-xs hidden-sm"></div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#one" aria-controls="home" role="tab"data-toggle="tab"><span class="wjs_icon wjs_icon_new01"></span></a></li>
+                        <li role="presentation"><a href="#tow" aria-controls="profile" role="tab" data-toggle="tab"><span class="wjs_icon wjs_icon_new02"></span></a></li>
+                        <li role="presentation"><a href="#there" aria-controls="messages" role="tab" data-toggle="tab"><span class="wjs_icon wjs_icon_new03"></span></a></li>
+                        <li role="presentation"><a href="#four" aria-controls="settings" role="tab" data-toggle="tab"><span class="wjs_icon wjs_icon_new04"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-7">
+                    <!-- Tab panes -->
+                    
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="one">
+                            <ul class="wjs_newslist">
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微公告】关于海航通宝22期项目募集期延长通知
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微动态】世纪佳缘与百合网的投资人首善财富董事长吴正新一行莅临微金所调研指导
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微动态】封面人物第六期 ▏万雅泉—— 手写心情的双鱼座美女
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微公告】2016年7月11日微金所平台系统升级维护公告
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微动态】微金所与前海航交所携手，正式推出安全优质的理财产品—海航金宝！
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微动态】微金所七月电脑节，激情狂欢理财好礼送不停！
+                                </a></li>
+                                <li><a href="javascript:;"><span class="hidden-xs">2016-01-22</span>【微还款】一周还款公告2016年7月11日-7月17日
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tow">tow</div>
+                        <div role="tabpanel" class="tab-pane" id="there">there</div>
+                        <div role="tabpanel" class="tab-pane" id="four">one</div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
     <!-- 合作伙伴 -->
-    <div class="partner"></div>
+    <div class="partner">
+        <div class="container">
+            <h3>合作伙伴</h3>
+            <ul>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner01"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner02"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner03"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner04"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner05"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner06"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner07"></a></li>
+                <li><a href="javascript:;" class="wjs_icon wjs_icon_partner08"></a></li>
+            </ul>
+        </div>
+    </div>
     <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="js/wjs.js"></script>
+    <script src="iscroll.js"></script>
     <script>
         $(function () {
             $('.carousel').carousel({
                 interval: 1000
             })
             $('[data-toggle="tooltip"]').tooltip();
-        })
+            var ul=$(".product .nav-tabs");
+            lis=ul.find("li");
+            var totaWidth=0;
+            lis.each(function(index,value){
+                totaWidth=totaWidth+$(value).innerWidth();
+            });
+            ul.width(totaWidth);
+            var myScroll=new IScroll(".tabs_parent",{
+                scrollX:true,
+                scrollY:false
+            });
+        });
     </script>
 </body>
-
 </html>

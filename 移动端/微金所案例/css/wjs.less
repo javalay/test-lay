@@ -9,6 +9,9 @@ header {
 //   overflow: hidden;
   .row {
     height: 100%;
+    .wjs_icon{
+      font-size: 14px ;
+    }
     > div:nth-of-type(-n + 3) {
       //前三个div
       border-right: 1px solid #ccc;
@@ -37,7 +40,7 @@ header {
       border-color: #e92322;
     }
     > div:nth-last-of-type(1) .btn-link {
-      color: #333;
+      color: #333; 
     }
   }
 }
@@ -46,6 +49,7 @@ header {
   &.navbar {
     clear: both;
     margin-bottom: 0;
+    border: none;
   }
   .navbar-brand {
     height: 80px; // 因为有一个padding 15px 所以行高就是50px
@@ -74,15 +78,16 @@ header {
         color: #777;
         border-bottom: 3px solid @baseColor;
       }
-    }
-    .active {
-      > a,
-      a:hover,
-      a:focus {
-        background-color: transparent;
-        border-bottom: 3px solid @baseColor;
+      &.active {
+        > a,
+        a:hover,
+        a:focus {
+          background-color: transparent;
+          border-bottom: 3px solid @baseColor;
+        }
       }
     }
+   
   }
   .navbar-toggle {
     margin-top: 23px;
@@ -121,6 +126,10 @@ header {
   .container{
       padding-left: 0;
       padding-right: 0;
+      .tabs_parent {
+        width: 100%;
+        overflow: hidden;
+    }
   }
   .nav-tabs{
       overflow: hidden;
@@ -255,4 +264,111 @@ header {
         color: #fff;
     }
   }
+}
+.news {
+  .news_title {
+      line-height: 50px;
+      font-size: 25px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      position: relative;
+      &::before {
+          content: "";
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          position: absolute;
+          right: -8px;
+          bottom: -4px;
+      }
+  }
+  .col-md-1 {
+      // 添加虚线边框
+      .news_line {
+          width: 1px;
+          height: 100%;
+          position: absolute;
+          border-left: 1px dashed @baseColor;
+          left: 45px;
+          top: 0;
+      }
+  }
+  .nav-tabs {
+      border-bottom: none;
+      position: relative; // 使用伪元素添加虚线，伪元素必须要求元素有具体的宽高值
+      // 所谓具体的是宽高值是指样式中设置了width height 
+      // &::before{
+      //   content: "";
+      // }
+      >li {
+          //添加之间的距离
+          margin-bottom: 60px;
+          >a {
+              background-color: #ccc;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              border: none;
+          }
+          >a:hover {
+              background-color: @baseColor;
+              border: none;
+          }
+          &.active {
+              a,
+              a:hover,
+              a:focus {
+                  border: none;
+                  background-color: #e92322;
+              }
+          }
+          .wjs_icon {
+              font-size: 30px;
+              color: #fff;
+          }
+      }
+      >li:last-of-type{
+        margin-bottom: 0px;
+      }
+      @media screen and (min-width: 768px) and (max-width:992px) {
+        >li {
+            margin: 20px 30px;
+        }
+    }
+    @media screen and (max-width:768px) {
+        >li {
+            margin: 20px 0px;
+            width: 25%;
+        }
+    }
+  } // 新闻列表
+  .wjs_newslist {
+      list-style: none;
+      >li {
+          line-height: 60px;
+      }
+  }
+}
+//合作伙伴
+.partner{
+background-color: #eee;
+padding: 20px;
+text-align: center;
+h3{
+  width: 100%;
+
+}
+ul{
+  list-style: none;
+  //变为行内快 居中显示
+  display: inline-block;
+  li{
+    float: left;
+    margin-left: 20px;
+  }
+}
+.wjs_icon{
+  font-size: 80px;
+}
 }
