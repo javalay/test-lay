@@ -1,0 +1,129 @@
+@baseColor: #ccc;
+@BaseColor: #e88b23;
+.nav {
+  &.navbar {
+    margin-bottom: 0;
+    border: none;
+  }
+  .navbar-brand {
+    height: 80px;
+    line-height: 50px;
+    > span:first-of-type {
+      color: @baseColor;
+    }
+    > span:last-of-type {
+      color: #333;
+    }
+  }
+  /*修改导航项的样式*/
+  .navbar-nav {
+    float: right;
+    > li {
+      > a {
+        line-height: 30px;
+        font-size: 16px;
+      }
+      > a:hover,
+      a:focus {
+        color: @BaseColor;
+      }
+      &.active {
+        > a,
+        a:hover,
+        a:focus {
+          background-color: transparent;
+          color: #e88b23;
+        }
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-top: 23px;
+  }
+}
+.buy_Likes {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.buy_i {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  h1 {
+    width: 100%;
+    color: #e88b23;
+    margin: 43px;
+  }
+  h1::after,
+  h1::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    border-bottom: 1px solid @BaseColor;
+    position: absolute;
+  }
+  h1::after {
+    top: 10px;
+    left: 20px;
+  }
+  h1::before {
+    top: 10px;
+    left: 20px;
+  }
+}
+#th {
+  margin-bottom:20px;
+  > .th_1 {
+    width: 100%;
+    margin-left: 5%;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 5px 5px 20px #000;
+    .heads {
+      height: 60px;
+      font-size: 20px;
+      line-height: 60px;
+      font-style: bolder;
+    }
+    .money {
+      background: #68c4ab;
+      color: #fff;
+      font-size: 16px;
+    }
+    .foot {
+      background: #f55c3d;
+      color: #fff;
+      font-size: 18px;
+    }
+    > ul {
+      padding-left: 0px;
+      > li {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        list-style: none;
+        > a {
+          text-decoration: none;
+          color: #337ab7;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+.rows{
+  width: 100%;
+  height: 100%;
+  li{
+    list-style: none;
+    float: left;
+    margin-left: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    a{
+      color: #fff;
+    }
+  }
+}

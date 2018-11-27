@@ -1,0 +1,123 @@
+.nav {
+  /*修改导航项的样式*/
+}
+.nav.navbar {
+  margin-bottom: 0;
+  border: none;
+}
+.nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+}
+.nav .navbar-brand > span:first-of-type {
+  color: #ccc;
+}
+.nav .navbar-brand > span:last-of-type {
+  color: #333;
+}
+.nav .navbar-nav {
+  float: right;
+}
+.nav .navbar-nav > li > a {
+  line-height: 30px;
+  font-size: 16px;
+}
+.nav .navbar-nav > li > a:hover,
+.nav .navbar-nav > li a:focus {
+  color: #e88b23;
+}
+.nav .navbar-nav > li.active > a,
+.nav .navbar-nav > li.active a:hover,
+.nav .navbar-nav > li.active a:focus {
+  background-color: transparent;
+  color: #e88b23;
+}
+.nav .navbar-toggle {
+  margin-top: 23px;
+}
+.buy_Likes {
+  width: 100%;
+}
+.buy_Likes img {
+  width: 100%;
+  height: 100%;
+}
+.buy_i {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.buy_i h1 {
+  width: 100%;
+  color: #e88b23;
+  margin: 43px;
+}
+.buy_i h1::after,
+.buy_i h1::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  border-bottom: 1px solid #e88b23;
+  position: absolute;
+}
+.buy_i h1::after {
+  top: 10px;
+  left: 20px;
+}
+.buy_i h1::before {
+  top: 10px;
+  left: 20px;
+}
+#th {
+  margin-bottom: 20px;
+}
+#th > .th_1 {
+  width: 100%;
+  margin-left: 5%;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 5px 5px 20px #000;
+}
+#th > .th_1 .heads {
+  height: 60px;
+  font-size: 20px;
+  line-height: 60px;
+  font-style: bolder;
+}
+#th > .th_1 .money {
+  background: #68c4ab;
+  color: #fff;
+  font-size: 16px;
+}
+#th > .th_1 .foot {
+  background: #f55c3d;
+  color: #fff;
+  font-size: 18px;
+}
+#th > .th_1 > ul {
+  padding-left: 0px;
+}
+#th > .th_1 > ul > li {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  list-style: none;
+}
+#th > .th_1 > ul > li > a {
+  text-decoration: none;
+  color: #337ab7;
+  font-size: 13px;
+}
+.rows {
+  width: 100%;
+  height: 100%;
+}
+.rows li {
+  list-style: none;
+  float: left;
+  margin-left: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.rows li a {
+  color: #fff;
+}
