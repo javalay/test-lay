@@ -1,0 +1,49 @@
+.jd_layout{
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin:0 auto;
+    background-color: #eee;
+}
+
+/*轮播图样式*/
+.jd_banner{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.jd_bannerImg{
+    width:800%;
+    position: relative;
+}
+.jd_bannerImg > li{
+    width:12.5%;
+    float: left;
+}
+.jd_bannerImg > li img{
+    display: block;
+    width: 100%;
+}
+.jd_bannerIndicator{
+    width: 128px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+}
+.jd_bannerIndicator > li{
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    float: left;
+    margin-left:10px;
+}
+.jd_bannerIndicator > li:first-of-type{
+    margin-left:0;
+}
+.jd_bannerIndicator > li.active{
+    background-color: #fff;
+}
+
