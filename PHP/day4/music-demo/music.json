@@ -1,0 +1,19 @@
+[{
+    "id": 1,
+    "title": "\u5f20\u4e09\u4e4b\u6b4c",
+    "singer": "\u5f20\u4e09",
+    "album": "\u5f20\u4e09\u7684\u6b4c",
+    "src": ".\/mp3\/zhangsan.mp3"
+}, {
+    "id": 2,
+    "title": "\u674e\u56db\u4e4b\u6b4c",
+    "singer": "\u674e\u56db",
+    "album": "\u674e\u56db\u7684\u6b4c",
+    "src": ".\/mp3\/See You Again.mp3"
+}, {
+    "id": 3,
+    "title": "\u738b\u4e94\u4e4b\u6b4c",
+    "singer": "\u738b\u4e94",
+    "album": "\u738b\u4e94\u7684\u6b4c",
+    "src": ".\/mp3\/See You Again.mp3"
+}] 

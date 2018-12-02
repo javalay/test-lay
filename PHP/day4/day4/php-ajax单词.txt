@@ -1,0 +1,124 @@
+IP地址， Internet Protocol Address
+localhost
+hosts 文件
+URL（Uniform Resource Locator），统一资源定位符
+DNS： Domain  Name  Server，域名服务器，Domain Name System 域名系统
+Apache
+MySQL
+PHP
+port，端口
+virtualhost，虚拟主机
+Options，选项
+index，索引
+PHP（PHP: Hypertext Preprocessor）
+echo
+print
+print_r
+var_dump
+foreach
+isset
+unset
+empty
+PHP数据类型：
+string
+int
+float
+bool
+array
+object
+null
+resource
+数据类型判断：
+is_string(), is_int(), is_float(), is_bool(), is_array(), is_object(), is_nll
+is_numeric()
+超全局变量是：
+$GLOBALS — 引用全局作用域中可用的全部变量
+$_SERVER — 获取服务端相关信息
+$_REQUEST — 获取提交参数
+$_POST — 获取 POST 提交参数
+$_GET — 获取 GET 提交参数
+$_FILES — 获取上传文件
+$_ENV — 操作环境变量
+$_COOKIE — 操作 Cookie
+$_SESSION — 操作 Session
+global，全局的
+definde：定义常量
+载入文件：
+include
+include_once
+require
+require_once
+字符串函数：
+strlen()
+mb_strlen()
+implode()
+explode()
+trim()
+strrchr()
+
+时间函数：
+time()
+date()
+strtotime()
+
+数组函数：
+count()
+
+文件操作：
+file_get_contents()
+file_put_contents()
+
+请求与表单相关：
+$_GET
+$_POST
+$_REQUEST
+$_FILES
+$_SERVER
+action
+method
+enctype=multipart/form-data
+enctype=application/x-www-form-urlencoded
+<input type="file"  name="file1"  accept=".jpg,.png,.gif" />
+php.ini中：
+post_max_size：一次请求上传的数据的最大大小
+upload_max_filesize：上传的单个文件的最大大小
+
+JSON：JavaScript Object Notation
+json_decode
+json_encode
+
+HTTP：HyperText Transfer Protocol，超文本传输协议
+Host：请求的主机
+Cache-Control：控制缓存（例如：max-age=60 缓存 60 秒）
+Accept：客户端想要接收的文档类型，逗号分隔
+User-Agent：标识什么客户端帮你发送的这次请求
+Referer：这次请求的来源
+Accept-Encoding：可以接受的压缩编码
+Cookie：客户端本地的小票信息
+Keep-Alive：保持活动的（保持连接）
+Content-Type：连接类型
+Content-length：内容长度
+Set-Cookie：设置cookie
+header()
+
+常见状态代码、状态描述的说明如下。
+200 OK：客户端请求成功。
+400 Bad Request：客户端请求有语法错误，不能被服务器所理解。
+401 Unauthorized：请求未经授权，这个状态代码必须和 WWW-Authenticate 报头域一起使用。
+403 Forbidden：服务器收到请求，但是拒绝提供服务。
+404 Not Found：请求资源不存在，举个例子：输入了错误的URL。
+500 Internal Server Error：服务器发生不可预期的错误。
+503 Server Unavailable：服务器当前不能处理客户端的请求，一段时间后可能恢复正常。
+$_COOKIE
+setcookie()
+$_SESSION
+session_start()
+session_destroy()
+
+MySQL
+MySQL数据类型：int, float, char, varchar, decimal, date, 
+基本语句
+
+
+
+
