@@ -23,7 +23,7 @@
 		// var_dump(!isset($_FILES["source"]["name"]); //永远是false
 		// if(!isset($_FILES["source"]["name"]) && $_FILES["source"]["error"] != 0){
 			// 有文件名的存在                         并且发生了错误
-		if(!empty($_FILES["source"]["name"]) && $_FILES["source"]["error"] != 0){
+		if(!empty($_FILES["sour  ce"]["name"]) && $_FILES["source"]["error"] != 0){
 			$errorArr[] = "source";
 		}
 		// 统一的判断用户数据是否输入不正确
@@ -34,7 +34,7 @@
 			// 方法中的return,只会中止当前方法的执行，而会继续执行方法调用后的代码
 			return;
 		}
-		// 数据正确的时候，实现编辑操作
+		// 数据正确的时候，实现编辑操作 
 		// 1.实现文件的上传:只有用户真正的上传了文件，同时上传成功，那么才需要将文件从临时目录移到到永久目录
 		if(isset($_FILES["source"]["name"]) && $_FILES["source"]["error"] == 0){
 			move_uploaded_file($_FILES["source"]["tmp_name"],"./mp3/".$_FILES["source"]["name"]);
@@ -60,7 +60,7 @@
 				}
 			}
 			break;
-		}
+		} 
 		// 2.5.将修改后的数据重新写入到文件
 		file_put_contents("music.json",json_encode($dataArr));
 		// 2.6实现页面的跳转
@@ -70,22 +70,24 @@
 	if(!empty($_GET)){
 		// 1.接收id号 ---判断是否有这个id号
 		if(isset($_GET["id"])){
-			// $id = $_GET["id"];
+			$id = $_GET["id"];
 			// // 2.根据id号获取对应id号的数据
 			// // 2.1 读取文件
 			// $dataStr = file_get_contents("music.json");
 			// // 2.2 将文件转换为数组
 			// $dataArr = json_decode($dataStr,true);
 			// // 2.3 遍历数组，查找到对应id号的数据
-			// foreach($dataArr as $key => $value){
+			// foreach($dataArr as $key => $value){ 
 			// 	if($value["id"] == $id){
 			// 		// 2.4 说明查找到了对应id号的数据 $value，就将这个数据存储到一个变量中，方便后期的使用修改
 			// 		$current = $value;
 			// 		break;
 			// 	}
 			// }
-			getCurrentData($id);
+			$current= getCurrentData($id);
+			// print_r $current;
 		}
+		// edit(); 
 	}
 	// 如果是post请求：收集数据，实现数据的修改操作 1.实现文件的上传(如果用户重新选择了文件) 2.实现对应id号数据的修改操作
 	else if(!empty($_POST)){
@@ -104,7 +106,7 @@
 			// 		break;
 			// 	}
 			// }
-			getCurrentData($id);
+			$current=getCurrentData($id);
 		}
 		edit();
 	}
@@ -122,6 +124,8 @@
 					break;
 				}
 			}
+			// print_r($current);
+			return $current;
 		}
 ?>
 <!DOCTYPE html>

@@ -26,4 +26,4 @@
         //  这个操作是跳转到之前的那个页面 list.php
         echo "<script>location.href='list.php'</script>"; 
     }
-?>
+?> 
