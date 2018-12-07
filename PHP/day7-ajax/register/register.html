@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./form.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./validate.php" method="post">     
+        <span id="msg">aaa</span>  
+        用户名：<input type="text" name="username" class="username">
+        昵称：<input type="text" name="nickname" >
+        密码： <input type="password" name="password" >   
+        <input type="submit" value="注册">
+    </form>
+    <div class="showmsg"></div>
+    <script>
+    document.querySelector(".username").onblur=function(){
+        var name=this.value;
+        var xhr=new XMLHttpRequest();
+        //这是通过get请求传输数据  引用的是register.php这个文件
+        // xhr.open("get","register.php?username="+name);
+        //这是通过post请求传输数据  引用的是validate.php这个文件
+        xhr.open("post","validate.php");
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send("username="+name);
+        // console.log(xhr.status);
+        xhr.onreadystatechange=function(){
+            if(xhr.status==200&&xhr.readyState==4){
+                var test= xhr.responseText;
+                console.log(test);
+                document.querySelector(".showmsg").innerHTML=test;
+            }
+        }
+    }
+    </script>
+</body>
+</html>

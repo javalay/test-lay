@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+        margin: 0 auto;
+    }
+    input{  
+        width: 200px;  
+        padding:8px;  
+        background-color: #428bca;  
+        border-color: #357ebd;  
+        color: #fff;  
+        border-radius: 10px; /* future proofing */  
+        text-align: center;  
+        vertical-align: middle;  
+        border: 1px solid transparent;  
+        font-weight: 900;  
+        font-size:125%;
+        margin-bottom: 10px;
+      }  
+      .show, .result, span{
+          background-color: aliceblue;
+          margin-left: 20px;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=15, Direction=30, Color=#4099FF)";/*IE 8*/
+text-shadow: -7px 4px 15px #4099FF;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=15, Direction=135, Color=#4099FF); /*IE 5.5-7*/
+      }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" class="in_a" value="石头"><span class="st"></span><br>
+    <input type="button" class="in_b" value="剪刀"><span class="jd"></span><br>
+    <input type="button" class="in_c" value="布"><span class="bu"></span><br>
+    <div class="show"></div>
+    <div class="result"></div>
+    <div></div>
+    <script>
+        window.onload = function () {
+            var in_a = document.querySelector(".in_a"),
+            in_b = document.querySelector(".in_b"),
+            in_c = document.querySelector(".in_c"),
+            st = document.querySelector(".st"),
+            jd = document.querySelector(".jd"),
+            bu = document.querySelector(".bu"),
+            ress=document.querySelector(".result");
+            //记录输赢次数
+            var d_s=0,me_s=0, pj=0;
+            // 记录点击次数
+            var in_aa = 0,in_bb = 0,in_cc = 0;
+            in_a.onclick = function () {
+                item = this;
+                in_aa++;
+                game(item);
+                st.innerHTML = "你点击✊的次数" + in_aa+"次";
+            }
+            in_b.onclick = function () {
+                item = this;
+                in_bb++;
+                game(item);
+                jd.innerHTML = "你点击✂的次数" + in_bb+"次";
+            }
+            in_c.onclick = function () {
+                item = this;
+                in_cc++;
+                game(item);
+                bu.innerHTML = "你点击🙅‍的次数" + in_cc+"次";
+            }
+            //从服务器获取数据封装的函数
+            function game(item) {
+                var caiquan = item.value;
+                console.log(caiquan);
+                var xhr = new XMLHttpRequest();
+                // 2.设置请求行
+                xhr.open("get", "caiquan.php?caiquan=" + caiquan);
+                // 3.设置请求头:get不需要设置
+                // 3.设置请求体
+                xhr.send(null);
+                // 让异步对象接收服务器响应数据:一个成功的响应包含两个条件：1.服务器成功响应了  2.数据解析完毕可以使用了
+                xhr.onreadystatechange = function () {
+                    if (xhr.status == 200 && xhr.readyState == 4) {
+                        var result = xhr.responseText;
+                        var data = JSON.parse(result);
+                        document.querySelector(".show").innerHTML = "电脑出："+data["me"]+"|"+"我出："+data["you"];
+                        panduan(result);
+                    }
+                }
+            }
+            //判断输赢函数
+            function panduan(res) {
+                //把string格式的数据转换为JSOn格式的数据--便于读取
+                var data = JSON.parse(res);
+                // console.log(data);
+                // console.log(typeof data);
+                // console.log(data["me"]);
+                // console.log(data["you"]);
+                if (data["me"] == '石头' && data["you"] == '布') {
+                    d_s++;
+                    ress.innerHTML="电脑胜利"+d_s+"次";
+                } else if (data["me"] == '石头' && data["you"] == '剪刀') {
+                    me_s++;
+                    ress.innerHTML="您胜利啦"+me_s+"次";
+                } else if (data["me"] == '石头' && data["you"] == '石头') {
+                    pj++;
+                    ress.innerHTML="战平！"+pj+"次";
+                } else if (data["me"] == '剪刀' && data["you"] == '布') {
+                    me_s++;
+                    ress.innerHTML="您胜利啦"+me_s+"次";
+                } else if (data["me"] == '剪刀' && data["you"] == '剪刀') {
+                    pj++;
+                    ress.innerHTML="战平！"+pj+"次";
+                } else if (data["me"] == '剪刀' && data["you"] == '石头') {
+                    d_s++;
+                    ress.innerHTML="电脑胜利"+d_s+"次";
+                } else if (data["me"] == '布' && data["you"] == '剪刀') {
+                    d_s++;
+                    ress.innerHTML="电脑胜利"+d_s+"次";
+                } else if (data["me"] == '布' && data["you"] == '石头') {
+                    me_s++;
+                    ress.innerHTML="您胜利啦"+me_s+"次";
+                } else if (data["me"] == '布' && data["you"] == '布') {
+                    pj++;
+                    ress.innerHTML="战平！"+pj+"次";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
