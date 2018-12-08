@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="asjhgb21bjh123bhj1231231jh3b131bhj23131hbj";
+        var res=/\d+/g;
+        // var result=res.exec(str);
+         var total=0
+        //  ress.match(str);
+        // console.log(ress);
+        do{
+            var result=res.exec(str);
+            console.log(result);
+        }while( result=res.exec(str)){
+            var total= total+1;
+            console.log(result[0]);
+            sum+=result[0]
+        }
+      
+        
+    </script>
+</body>
+</html>
