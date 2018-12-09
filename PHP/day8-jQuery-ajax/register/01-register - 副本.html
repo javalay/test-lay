@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单注册</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		ul {
+			margin: 0;
+			padding: 50px;
+			list-style: none;
+		}
+
+		.register {
+			width: 800px;
+			margin: 50px auto;
+			background-color: #FFF;
+			border: 1px solid #CCC;
+			border-radius: 5px;
+		}
+
+		li {
+			display: flex;
+			margin: 20px 0;
+		}
+		
+		label, input {
+			display: block;
+			float: left;
+			height: 46px;
+			font-size: 24px;
+			box-sizing: border-box;
+			color: #333;
+		}
+
+		label {
+			width: 200px;
+			line-height: 46px;
+			margin-right: 30px;
+			text-align: right;
+		}
+
+		input {
+			width: 320px;
+			padding: 8px;
+			line-height: 1;
+			outline: none;
+			position: relative;
+		}
+
+		input.code {
+			width: 120px;
+		}
+
+		input.verify {
+			width: 190px;
+			margin-left: 10px;
+		}
+
+		input.disabled {
+			background-color: #CCC !important;
+		}
+
+		input[type=button] {
+			border: none;
+			color: #FFF;
+			background-color: #E64145;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.tips {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+		}
+
+		.tips p {
+			min-width: 300px;
+			max-width: 400px;
+			line-height: 40px;
+			margin: 0 auto;
+			color: #FFF;
+			display: none;
+			background-color: #C91623;
+		}
+	</style>
+</head>
+<body>
+	<script src="jquery.js"></script>
+	<div class="register">
+		<form id="ajaxForm">
+			<ul>
+				<li>
+					<label for="">用户名</label>
+					<input type="text" name="name" class="name">
+				</li>
+				<li>
+					<label for="">请设置密码</label>
+					<input type="password" name="pass" class="pass">
+				</li>
+				<li>
+					<label for="">请确认密码</label>
+					<input type="password" name="repass" class="repass">
+				</li>
+				<li>
+					<label for="">验证手机</label>
+					<input type="text" name="mobile" class="mobile">
+				</li>
+				<li>
+					<label for="">短信验证码</label>
+					<input type="text" name="code" class="code">
+					<input type="button" value="获取验证码" class="verify">
+				</li>
+				<li>
+					<label for=""></label>
+					<input type="button" class="submit " value="立即注册">
+				</li>
+			</ul> 
+		</form>
+	</div>
+	<!-- 提示信息 -->
+	<div class="tips">
+		<p>用户名不能为空---</p>
+	</div>
+	<script>
+		// $(function(){
+			$(".verify").on("click",function(){
+				//收集手机号
+				var phone=$(".mobile").val();
+				$.ajax({
+					type:'get',
+					url:"./getCode.php",
+					data:{"phone":phone},
+					// 请求发送之前的回调函数
+					beforeSend:function(){
+						//验证这个手机号是否合法 合合法返回true 不合法返回false
+						// 定义一个正则表达式
+						var reg =/^1\d{10}$/;
+						console.log(phone);
+						if(!reg.test(phone)){
+							// console.log(phone);
+							//显示提示元素
+							$(".tips>p").fadeIn(1000).delay(2000).fadeOut(1000).text("请输入合法的手机号");
+							//返回false 之后这个函数就会被终止
+							return false;
+						}
+						$(".verify").addClass("disabled");
+						//倒计时
+						var total=5;
+						var timeId= setInterval(function(){
+							total--;
+							$(".verify").val(total+"秒之后重新获取");
+							if(total<=0){
+								$(".verify").val('重新获取').removeClass('disabled');
+								// 此时要清除定时器
+								clearInterval(timeId);
+							}
+						},1000);
+					},
+					success:function(result){
+						console.log(result); 
+						$('.code').val(result);
+					}
+				});
+			});
+			$(".name").on("blur",function(){
+				var name =$(".name").val();
+				// console.log(111);
+				$.ajax({
+					type:'get',
+					url:"./validateUsername.php",
+					data:{'name':name},
+					dataType:'json',
+					beforeSend:function(){},
+					error:function(){
+						console.log(name);
+					},
+					//成功响应后调用的方法
+					success:function(result){
+						console.log(result);
+					console.log(typeof result);
+						//判断返回值，是否标记用户是否存在
+						if(result && result.code==0){
+							// console.log(1118888);
+							$('.tips > p ').text(result.msg).fadeIn(1000).delay(2000).fadeOut(1000);
+						}
+					}
+				});
+				// console.log(111);
+			});
+			$(".submit").on("click",function(){
+				// 表单数据收集
+				var data=$("#ajaxForm").serialize();
+				// console.log(data);
+				$.ajax({
+					type:'post',
+					url:'./register.php',
+					data:data,
+					timeout:3000,
+					dataType:'json',
+					//请求发生之前 所执行的函数
+					beforeSend:function(){
+						$('.submit').addClass('disabled').val('正在注册中');
+					},
+					success:function(result){
+						if(result&&result.code==1){
+							$(".tips > p ").text(result.msg).fadeIn(1000).delay(2000).fadeOut(1000);
+						}
+					},
+					error:function(){
+						$('tips > p').text("注册失败").fadeIn(1000).delay(2000).fadeOut(1000);
+					},
+					complete:function(){
+						$('.submit').removeClass("disabled").val('注册');
+					}
+				});
+				
+			});		
+		// });
+		</script>
+</body>
+</html> 

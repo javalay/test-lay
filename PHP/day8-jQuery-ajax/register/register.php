@@ -2,14 +2,14 @@
     $name = $_POST['name'];
     $pass = $_POST['pass'];
     $mobile = $_POST['mobile'];
-    echo $name;
+    // echo $name;
     /*创建需要进行存储的当前用户注册对象*/
     $obj = array(
         'name' => $name,
         'pass' => $pass,
         "mobile" => $mobile
     );
-    echo $obj;
+    // echo $obj;
     /*php无法直接将一个数据存储到文件，它需要先将数据写入到数组，再将数组写入到文件*/
     $arr = file_get_contents('data.json'); //字符串
     $dataArr = json_decode($arr); //将json格式字符串转换为php数组
