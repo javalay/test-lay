@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./formData/form.css">
+    <title>Document</title>
+    <style>
+        .progress{
+            width: 800px;
+            height: 30px;
+            border:1px solid green;
+            margin:0 auto;
+            overflow:hidden;
+            position: relative;
+        }
+
+        .in{
+            width: 3%;
+            height: 100%;
+            background: red;
+        }
+
+        span{
+            position: absolute;
+            left:390px;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        用户名：<input type="text" name="username" >
+        密码：<input type="password" name="password" >
+        头像：<input type="file" name="myfile" id="pic">
+        <input type="button" value="发送ajax请求" id="sub">
+    </form>
+    <div class="progress" >
+        <div class="in"></div>
+        <span>0%</span>
+    </div>
+    <img src="" alt="">
+    <script>
+    document.querySelector("#sub").onclick=function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open("post","uploadfile.php");
+        var myform=document.querySelector("#form1");
+        var formData=new FormData(myform);
+        //进度条要放在send方法之前， 才可以完成
+        xhr.upload.onprogress=function(e){
+            // console.log(e);
+            var current=e.loaded;
+            var total=e.total;
+            var percent=current/total*100+"%";
+            document.querySelector(".in").style.width=percent;
+            document.querySelector("span").innerHTML=Math.floor(current/total*100)+"%";
+        }
+        xhr.send(formData);
+        xhr.onreadystatechange=function(){
+            if(xhr.status==200&&xhr.readyState==4){
+                console.log(xhr.responseText);
+            }
+        }
+    }
+    </script>
+</body> 
+</html>

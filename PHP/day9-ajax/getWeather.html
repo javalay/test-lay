@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>date</th>
+                <th>dayPictureUrl</th>
+                <th>nightPictureUrl</th>
+                <th>temperature</th>
+                <th>weather</th>
+                <th>wind</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script type="text/template" id="weatherTemp">
+        <% for(var i=0;i<items.length;i++){%>
+             <tr>
+                <td><%=items[i].date%></td>
+                <td><img src="<%=items[i].dayPictureUrl%>" alt=""></td>
+                <td><img src="<%=items[i].nightPictureUrl%>g" alt=""></td>
+                <td><%=items[i].temperature%></td>
+                <td><%=items[i].weather%></td>
+                <td><%=items[i].wind%></td>
+            </tr>
+        <%} %>
+    </script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/template-native.js"></script>
+    <script>
+        $.ajax({
+            url:"http://api.map.baidu.com/telematics/v3/weather",
+            data:{
+                'ak':"zVo5SStav7IUiVON0kuCogecm87lonOj",
+                "location":'信阳',
+                "output":'json'
+            },
+            dataType:'jsonp',
+            success:function(result){
+                console.log(result);
+                var html=template("weatherTemp",{"items":result.results[0].weather_data});
+                document.querySelector("tbody").innerHTML=html;
+            }
+        });
+    </script>
+</body>
+</html>
