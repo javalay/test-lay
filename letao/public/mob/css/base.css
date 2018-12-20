@@ -1,0 +1,112 @@
+/* css reset */
+body, ul, ol, dl, dt, dd, li, div, form, h1, h2, h3, h4, p {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #fff;
+}
+ul, ol {
+	list-style: none;
+}
+a, img {
+	display: block;
+}
+/* header  start */
+.my-header,.my-footer{
+    background-color: #006699;
+}
+.my-header h1,.my-header a{
+    color: #fff;
+}
+.my-header .mui-icon-search{
+    color:  #fff;
+}
+/* header end  */
+.my-footer .mui-tab-item {
+    color: #fff;
+    /* 设置 */
+	touch-action: none;
+}
+.my-footer .mui-tab-item.mui-active{
+	color: darkorange;
+}
+/* 轮播图 */
+.mui-slider{
+	touch-action: none;
+}
+/* nav-links */
+.nav-links{
+    padding: 10px;
+    /* 清除浮动 */
+    /* overflow: hidden; */
+}
+.nav-links a{
+    width: 33.33%;
+    float: left;
+}
+.nav-links a img{
+    width: 100%;
+    /* vertical-align: top; */
+}
+
+/*  brand 产品分类部分 */
+.brand{
+    padding: 10px 0;
+}
+.brand .title{
+    width: 100%;
+}
+.brand img{
+    width: 100%;
+    display: block;
+}
+.brand ul{
+    /* overflow: hidden; */
+}
+.brand ul li {
+ width: 25%;
+ float: left;
+}
+.brand ul li a {
+
+}
+
+.product{
+    padding: 10px;
+}
+.product ul li{
+    float: left;
+    width: 50%;
+    padding: 0 5px;
+}
+.product ul{
+    padding: 6px 0;
+}
+.product ul li a{
+    padding: 5px;
+    display: block;
+    box-shadow: 0 0 5px #ccc;
+    margin-top: 10px;
+}
+.product img{
+    width: 100%;
+}
+.product ul li p:first-of-type{
+    text-align: center;
+    padding:  5px;
+    font-size: 14px;
+}.product ul li p:last-child{
+    text-align: center;
+    font-size: 14px;
+    color: #f20;
+}
+.product ul li p:last-child del{
+    color: #ccc;
+}
+.product ul li a button{
+    display: block;
+    margin: 0px auto 10px;
+    background-color: #069;
+    border:1px solid     #069;
+}
