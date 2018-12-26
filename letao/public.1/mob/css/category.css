@@ -1,0 +1,62 @@
+.my-content {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  bottom: 50px;
+  width: 100%;
+  background: #f5f5f5;
+}
+.my-content .category-left,
+.my-content .category-right {
+  height: 100%;
+  position: relative;
+}
+.my-content .category-left {
+  width: 80px;
+  background: #fff;
+  float: left;
+}
+.my-content .category-left ul > li a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.my-content .active {
+  background: #f5f5f5;
+  border-right: 1px solid transparent;
+}
+.my-content .blank_info {
+  color: chartreuse;
+  font-size: 16px;
+}
+.my-content .category-right {
+  /* 第一种 */
+  /* float: right; */
+  /* 第二种 */
+  /* width: 100%; */
+  /* padding-left: 40px; */
+  /* box-sizing: border-box; */
+  /* 第三种 */
+  /* margin-left: 90px; */
+  /* 这是第四种 */
+  overflow: hidden;
+}
+.my-content .category-right ul {
+  margin-top: 10px;
+  background: #fff;
+}
+.my-content .category-right ul li {
+  float: left;
+  width: 33.33%;
+}
+.my-content .category-right ul li a {
+  text-align: center;
+  display: block;
+}
+.my-content .category-right ul li a img {
+  width: 100%;
+}

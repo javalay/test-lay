@@ -1,0 +1,56 @@
+.my-content {
+    position: absolute;
+    left: 0;
+    top: 44px;
+    bottom: 50px;
+    width: 100%;
+    background: #f5f5f5;
+    .category-left,
+    .category-right {
+        height: 100%;
+        position: relative;
+    }
+    .category-left {
+        width: 80px;
+        background: #fff;
+        float: left;
+        ul>li {
+            a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                font-size: 14px;
+                border-right: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+        }
+    }
+    //被选中后的样式
+    .active {
+        background: #f5f5f5;
+        border-right: 1px solid transparent;
+    }
+    .blank_info{
+        color: chartreuse;
+        font-size: 16px;
+    }
+    .category-right {
+        margin-left: 90px;
+        ul {
+            margin-top: 10px;
+            background: #fff;
+            li {
+                float: left;
+                width: 33.33%;
+                a {
+                    text-align: center;
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
