@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="seg1">
+        <alert></alert>
+        <alert></alert>
+        <alert></alert>
+        <alert></alert>
+    </div>
+    <div id="seg2">
+        <alert></alert>
+        <alert></alert>
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+        //自定义组件----这种就像是全局变量 不靠谱  ---注意这里 components 比下面少个s
+        // Vue.component('alert', {
+        //     template: '<button @click="on_click">弹弹弹</button>',
+        //     methods: {
+        //         on_click: function () {
+        //             alert("你调用了这个方法");
+        //         }
+        //     }
+        // });
+
+        //可以把alert 剪切出来--其他都可以调用，比较方便
+        var Alert = {
+            template: '<button @click="on_click">弹弹弹</button>',
+            methods: {
+                on_click: function () {
+                    alert("你调用了这个方法");
+                }
+            }
+        }
+        //可以把自定义组件设置为局部作用域 ---下面的就获取不到elert
+        new Vue({
+            el: "#seg1",
+            // 注意这里 components 比上面多个s
+            components: {
+                //元素名称-加引号
+                "alert": Alert
+            }
+        });
+        new Vue({
+            el: "#seg2",
+            components: {
+                //元素名称-加引号
+                "alert": Alert
+            }
+        })
+    </script>
+</body>
+
+</html>
