@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+
+        <input type="button" value="跑起来" @click="lang">
+        <input type="button" value="停下来" @click='stop'>
+        <h4>{{ msg }}</h4>
+
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+       
+    var app=new Vue({
+        el:'.app',
+        data:{
+            msg:'猥琐发育，不浪~~~',
+            intervaId:null
+        },
+        methods:{
+            lang(){
+                
+                if(this.intervaId) return
+                //箭头函数会和外层函数的this指向相同
+                this.intervaId=setInterval( ()=>{
+                    // console.log(this.msg)
+                    //截取第一个字符串
+                    var start=this.msg.substring(0,1)
+                    //截取后面所有的字符串
+                    var end=this.msg.substring(1)
+                    //后面所有的字符串和第一个字符串拼接起来， 然后就组成了一个新的字符串
+                    this.msg=end+start
+                    // console.log(this.msg)
+                    // console.log(this.intervaId)
+                },300)
+            },
+            //停止定时器这个操作
+            stop(){
+                clearInterval(this.intervaId)
+                //在这个定时器停止之后 就必须给定intervaId 是一个null  要不然开启不了新的定时器
+                this.intervaId=null
+            }
+        }
+    })
+    
+    </script>
+</body>
+</html>

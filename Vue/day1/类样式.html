@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><script src="../vue-2.4.0.js"></script>
+    <style>
+    .one{
+        color: aqua;
+    }
+    .tow{
+        color: yellowgreen;
+        font-size: 12px;
+    }
+    .three{
+        color: blue;
+        font-size: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 :class='one'>这是达标日</h1><input type="">
+        <h1 :class="['one']">这是第二</h1>
+        <h1 :class="['three']">这是第三</h1>
+        <h1 :class="[{'one':flag}]">这是第三</h1>
+        <h1 :class="obj">这是第三</h1>
+        <h1 :style="{color:'red','font-weight':600}">这是第三</h1>
+        <h1 :style="[obj1]">标日</h1>
+    </div>
+    <script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            flag:true,
+            obj:{tow:true},
+            obj1:{color:'yellow'}
+        }
+    })
+    </script>
+
+</body>
+</html>

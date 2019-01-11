@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue-2.4.0.js"></script>
+    <style>
+    [v-cloak]{
+        display: none
+    }
+    </style>
+</head>
+<body>
+ <div class="app">
+     <p v-cloak>========{{msg+'22222'}}-------</p>
+     <p v-text="result+'222222'">11111</p>
+     <div v-html="test+'www'+2222">111</div>
+     <input type="button" :title="mytitle+111" value="按钮" v-on:click='show'>
+     <input type="button" :title="mytitle+111" value="按钮" @:mouseenter='show'>
+     
+     <img :src="url" v-bind:title='mytitle'>
+ </div> 
+ <div id="bpp">
+     <ul >
+         <li>姓名： <span>{{name}}</span></li>
+         <li>年龄： <span>{{age}}</span></li>
+     </ul>
+ </div>
+<script>
+    var app=new Vue({
+        el:".app",
+        data:{
+            msg:'欢迎学习Vue!!!',
+            result:'第二个指令ww',
+            test:'<h1>大标签</h1>',
+            mytitle:'这是title属性',
+            // url:'../4.jpg'
+        },
+        methods:{
+            show(){
+                // alert('Hello Word'+this.msg)
+                alert(this.show)
+            }
+        }
+    })
+    const epp=new Vue({
+        el:'#bpp',
+        data:{
+            name:"李拴蛋",
+            age:24,
+            lis:''
+        }
+    })
+</script>   
+</body>
+</html>

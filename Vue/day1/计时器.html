@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,25 +37,21 @@
     </div>
     <script src="../vue-2.4.0.js"></script>
     <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                math: 97,
-                physics: 99,
-                english: 95,
-            },
-            //计算属性
-            computed: {
-                sum: function () {
-                    //最保险的做法是把每一个值都转换一下，避免出错
-                    return parseFloat(this.math)  +parseFloat(this.physics)  +parseFloat(this.english) ;
-                },
-                average: function () {
-                    return Math.round(this.sum / 3);
-                }
+    var app=new Vue({
+        el:'#app',
+        data:{
+            math:'99',
+            physics:'88',
+            english:'77',
+            // sun:'',
+            // average:""
+        },
+        computed:{
+            sun:function(){
+                return parseFloat(this.math)+parseFloat(this.physics)+parseFloat(this.english)
             }
-        });
+        }
+    })
     </script>
 </body>
-
 </html>

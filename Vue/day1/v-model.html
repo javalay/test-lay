@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{msg}}</h2>
+        <input type="text" v-bind:value="msg">
+        <input type="text" v-model='msg'>
+        <input type="checkbox" v-model="radio">
+        {{radio}}
+        <select name=""  v-model="select" class="form-control">
+            <option value="1" selected='selected'>北京</option>
+            <option value="2">上海</option>
+            <option value="3">天津</option>
+        </select>
+        {{select}}
+        
+        <select name="" id="input" class="form-control">
+            <option value="">-- Select One --</option>
+            <option value="">-- Select One --</option>
+            <option value="">-- Select One --</option>
+            <option value="">-- Select One --</option>
+        </select>
+        
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'hello word',
+            radio:'',
+            select:''
+        },
+        methods:{
+
+        }
+    })
+    </script>
+</body>
+</html>
