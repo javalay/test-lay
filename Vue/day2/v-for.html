@@ -9,12 +9,13 @@
 <body>
 	<div class="app">
 		<ul>
+			<con></con>
 			<li v-for="(item,i) in list">{{item}}-----{{i}}</li>
 			<li v-for="(item,i) in list1">{{item.id}}====={{item.name}}==={{i}}</li>
 		</ul>
 		<script src="../vue-2.4.0.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			
+			Vue.component('con',{template:'<div><h3>哈哈哈</h3></div>'})
 			var app=new Vue({
 				el:'.app',
 				data:{
@@ -24,7 +25,6 @@
 						{id:2,name:'ls'}
 					],
 				},
-				
 			})
 		</script>
 		
