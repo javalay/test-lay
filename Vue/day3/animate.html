@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="./lib/animate.css">
+    <!-- <script src="./lib/animate.css"></script> -->
+    <style>
+      #app{
+        perspective: 100px;
+        transform-style: preserve-3d;
+        width: 500px;height: 500px;
+        margin: 300px auto;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="按钮" @click='flag =!flag'>
+        <transition enter-active-class="zoomInDown" 
+                    leave-active-class="flash"
+                    :duration="{enter:'400',leave:'400'}"
+        >
+            <h1 appear v-show='flag' class="animated">你是最浪的崽</h1>
+        </transition>  
+    </div>
+    <script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            flag:true
+        }
+    })
+    
+    </script>
+</body>
+</html>

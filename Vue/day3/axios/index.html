@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/vue-2.4.0.js"></script>
+    <script src="../lib/axios.js"></script>
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script>
+        //这是设置公共的url地址
+    axios.defaults.baseURL="http://www.liulongbin.top:3005/"
+    //设置请求头 解决跨域的问题
+    axios.interceptors.request.use(config=>{
+        console.log(123)
+        config.headers['Authorization']='123'
+        return config   
+    })
+     var vm=new Vue({
+         el:'#app',
+         data:{},
+         //这是在声明周期函数中调用
+         created(){
+            this.getInfo()
+         },
+         methods:{
+            getInfo(){
+                //要想加参数  就直接在 url地址后面加，{params:{id:123}} 这样的形式传过去
+                axios.get('api/getlunbo').then(res=>{
+                    console.log(res)
+                })
+                //post传递参数 就直接在url后面 ，{name:'zs'} 这样的形式传递参数
+                // axios.post('http://www.liulongbin.top:3005/api/getlunbo').then(res=>{
+                //     console.log(res)
+                // })
+            }
+         }
+     })
+    </script>
+</body>
+</html>
