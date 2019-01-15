@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">  
+        <input type="button" value="按钮" @click="show">
+        <div id="msg" ref='msg'>哈哈</div>
+        <hr>
+        <login ref="mylogin"></login>
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+        var login={
+            template:"<h1>嘎嘎嘎嘎{{msg}}</h1>",
+            data(){
+                return{msg:'son msg'}
+            },
+            methods:{
+                showw(){
+                    console.log('这里调用了子组件的方法')
+                }
+            }
+        }
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{
+                show(){
+                    //这个是用dom的方式去获取 里面的信息
+                    console.log(document.getElementById('msg').innerText)
+                    //这是提供refs 的方式去获取
+                    console.log(this.$refs.msg.innerText)
+                    //这是获取子组件中的方法
+                    this.$refs.mylogin.showw()
+                }
+            },
+            components:{
+                login
+            }
+        })
+    </script>
+</body>
+</html>

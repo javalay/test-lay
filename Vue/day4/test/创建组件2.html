@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <mycon></mycon>
+        <!-- <login></login> -->
+    </div>
+    <template id="temp">
+        <div>
+            <h1>哈哈哈</h1>
+            <span>嘎嘎嘎</span>
+        </div>
+    </template>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        Vue.component('mycon',{
+            // 组件只有一个根元素
+            template:"<div><h1>嘎嘎</h1></div>"
+        })
+        //第二种方式
+        Vue.component('mycon',{template:"#temp"})
+        var vm=new Vue({
+            el:"#app",
+            data:{},
+            methods:{},
+    
+        })
+    </script>
+</body>
+</html>

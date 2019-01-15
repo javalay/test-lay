@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--  如果自定义组件是驼峰命名时 就下面这种方式去引用 -->
+        <my-con></my-con>
+
+        <mycon></mycon>
+
+        <!-- 第二种方式的引用 -->
+        <my-con1></my-con1>
+
+        <mycon1></mycon1>
+
+
+        <!-- 第三种方式的引用 -->
+        <!-- <my-con2></my-con2> -->
+        <mycon2></mycon2>
+        
+
+        <!-- 第四种方式 -->
+        <login></login>
+
+
+        <test></test>
+
+       
+    </div>
+    <template id="tmp1">
+            <h1>第三种方式 myCon2</h1>
+            <!-- <span>这是第二个标签</span> -->
+        </template>
+        <template id='tmp2'>
+            <div>
+                <h1>第三种的第二的 mycon2</h1>
+                <span>嘎嘎嘎</span>
+            </div>
+        </template>
+        <template id="temp"> 
+            <h1>这是自定义组件的方式</h1>
+        </template>
+    <script>
+       var con= Vue.extend({
+            template:'<h3>这是一个组件</h3>'
+        })
+        // Vue.component('myCon',con)
+        Vue.component('mycon',con)
+
+        //这是组件的简写形式
+        Vue.component('myCon',Vue.extend({
+            template:'<h1> 你是另一个组件</h1>'
+        }))
+        //第二种组件的写法
+        Vue.component('myCon1',{
+            //组件中只能有一个根元素包裹起来
+            template:'<div><h3>你是谁 {{msg}}</h3><span>干什么 {{age}}</span></div>',
+            //在组件中定义data属性
+            data:function(){
+                return {
+                    msg:'zs',
+                    age:18
+                }
+            }
+        })
+        Vue.component('mycon1',{
+            template:"<div><h1>第二种组件</h1>嘎嘎</div>"
+        })
+        //第三种方式 template 指定id  然后再 template标签中指定相应的id 
+        Vue.component('myCon2',{template:'#tmp1'})
+
+        Vue.component('mycon2',{template:'#tmp2'})
+    var vm =new Vue({
+        el:'#app',
+        data:{
+            name:"zs"
+        },
+        //这是第四种方式创建组件的方式
+        components:{
+            login:{
+                template:'<h1>这是第四中方式创建组件</h1>'
+            },
+            test:{
+                template:'#temp'
+            }
+        }
+    })
+    </script>
+</body>
+</html>

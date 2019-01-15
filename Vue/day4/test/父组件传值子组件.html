@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <!-- page 这是自定义的访问的变量 没有和父组件进行绑定，所有数据也是自己定义的   age 这个变量是引用父组件身上的。 -->
+            <com page="8888" :age="name" @func="showw"></com>
+    </div>
+    <template id="ddd">
+            <div>
+                <h1>这是一个组件{{page}}------{{age}}======={{title}}</h1>
+                <input type='button' value='按钮' @click='show'>
+            </div>
+    </template>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                name:'zs'
+            },
+            methods:{
+                showw(date){
+                    console.log('你刚刚好=========='+date)
+                }
+            },
+            //定义组件
+            components:{
+                com:{
+                    //在子组件中定义data变量的时候 要以方法的形式进行  
+                    data(){
+                        return {title:"这是子组件上面的变量"}
+                    },
+                    methods:{
+                        show(){
+                            console.log(88888)
+                            this.$emit("func",this.title)
+                        }
+                    },
+                    template:"#ddd",
+                    //所有 访问自定义变量和父组件上面的变量都要在 props中定义好  才能够引用
+                    props:['page','age']
+                },
+            }
+        })
+    </script>
+</body>
+</html>

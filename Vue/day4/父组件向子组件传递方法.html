@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <con @func='show'></con>
+    </div>
+    <template id="tmp">
+            <input type="button" value="按钮" @click='senmsg'>
+    </template>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            name:'zs'
+        },
+        methods:{
+            show(date){
+                console.log(this.name +"父组件的方法被子组件调用了"+date)
+            },
+        },
+        components:{
+            con:{
+                template:'#tmp',
+                data(){
+                    return{
+                        son:{name:'sss',age:12}
+                    }
+                },
+                methods:{
+                    senmsg(){
+                        console.log(this.son)
+                        //第二个值可以传递参数
+                        this.$emit('func',this.son)
+                    }
+                }
+            },
+            // com:{
+            //     template:'#temp',Z
+            //     data(){
+            //         return{
+            //             song:{name:'儿子',age:18}
+            //         }
+            //     },
+            //     methods:{
+            //         getmsg(){
+            //             this.$emit('fun',song)
+            //         }
+            //     }
+            // }
+        }
+    })
+    
+    </script>
+</body>
+</html>

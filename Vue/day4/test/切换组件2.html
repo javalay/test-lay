@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .v-enter,.v-leave-to{
+            opacity: 0;
+            transform:translate(100px,100px)
+        }
+        .v-enter-active,.v-leave-active{
+            transition: all .5s ease
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="" @click.prevent="cname='login'">登录</a>
+        <a href="" @click.prevent="cname='test'">注册</a>
+        <a href="" @click.prevent="cname='test1'">注销</a>
+        <transition mode="out-in">
+            <component :is='cname'></component>
+        </transition>
+    </div>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        Vue.component('login',{template:'<h1>登录界面</h1>'})
+        Vue.component('test',{template:'<h1>注册界面</h1>'})
+        Vue.component('test1',{template:'<h1>注销界面</h1>'})
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                cname:'login'
+            },
+            methods:{}
+        })
+    </script>
+</body>
+</html>

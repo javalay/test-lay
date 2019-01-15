@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <com :proage="age" proname="zs"></com>
+    </div>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            age:10
+        },
+        components:{
+            com:{ 
+                data(){
+                    return {
+                        age:77,
+                        title:'wwww'
+                    }
+                },
+                template:'<h1>嘎嘎嘎  这是在父组件中引用过来的数据{{proage}} ====={{proname}}==== 子组件中声明的数据{{age}}   ----- {{title}}</h1>',
+                props:['proage','proname']
+
+            }
+        }
+    })
+    </script>
+</body>
+</html>

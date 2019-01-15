@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--  然后 ==== 在父组件展示子组件，然后调用父组件中的方法， 需要以下面这种方式去 执行 @func="showw"  -->
+        <com @func="showw"></com>
+    </div>
+    <template id="vm">
+        <div>
+            <!-- 先在 子组件中只能去调用子组件自身的方法 -->
+            <input type="button" value="按钮" @click="show">
+            <span>哈哈哈</span>
+        </div>
+    </template>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{},
+            methods:{
+                // 调用方法  以data接收参数
+                showw(data){
+                    console.log("这是父组件的方法使用"+data)
+                }
+            },
+            components:{
+                com:{
+                    data(){
+                        return {title:"这是子组件的变量"}
+                    },
+                    template:"#vm",
+                    methods:{
+                        //然后再子组件被调用的方法中 去执行  this.$emit("func",this.title)  这个方法 才可以实现  父组件向子组件传递方法
+                        show(){
+                            console.log('显示出来'+this.title)
+                            //下面的第二个参数及后面的参数都是 传参
+                            this.$emit("func",this.title)
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

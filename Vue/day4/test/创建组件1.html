@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <mycon></mycon>
+        <my-con></my-con>
+    </div>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        //创建组件
+        var con=Vue.extend({
+            template:"<h1>嘎嘎</h1>"
+        })
+        Vue.component('mycon',con)
+        //这是一种简写的方式
+        Vue.component('myCon',Vue.extend({
+            template:'<h1>哈哈哈</h1>'
+        }))
+    
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                name:'zd'
+            },
+            mothods:{
+                
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <con></con>
+    </div>
+    <script src="../../vue-2.4.0.js"></script>
+    <script>
+        Vue.component('con',{
+            template:'<h1>哈哈{{msg}}</h1>',
+            data:function(){
+                return {
+                    msg:33,
+                    name:'zs'
+                }
+            }
+        })
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{
+
+            },
+        })
+    
+    </script>
+</body>
+</html>

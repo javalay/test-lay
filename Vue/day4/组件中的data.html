@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <con></con>
+    </div>
+    <template id="temp">
+        <h1>嘎嘎嘎嘎</h1>
+    </template>
+    <script src="../vue-2.4.0.js"></script>
+    <script>
+        Vue.component('con',{
+            template:"<h1>姓名：{{msg}} 年龄：{{age}}</h1>",
+            template:"#temp",
+            data:function(){
+               return {
+                   msg:'zs',
+                    age:18
+                } 
+            }
+        })
+    var vm=new Vue({
+        el:"#app",
+        data:{
+
+        }
+
+    })
+    </script>
+</body>
+</html>
