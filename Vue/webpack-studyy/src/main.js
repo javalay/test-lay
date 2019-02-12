@@ -10,8 +10,8 @@ function Person1(name){
     this.name=name
 }
 var p1=new Person1('李拴蛋')
-console.log(Person.info)
-console.log("=========")
+console.log(Person.info);
+console.log("=========");
 console.log(p1.name)
 
 $(function(){
