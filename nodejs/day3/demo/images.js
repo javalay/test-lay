@@ -3,8 +3,7 @@ const fs=require('fs')
 const path=require('path')
  http.createServer((req,res)=>{
      let url=req.url
-     console.log(url);
-     
+     console.log(url)
  	//设置报文响应头,告诉浏览器使用响应的数据
 	// res.setHeader('Content-type','text/html;charset=utf-8');
 	if(req.url===''|| url==="/index.html"){
